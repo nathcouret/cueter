@@ -1,12 +1,60 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cuete</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="pico.min.css">
+    <link rel="stylesheet" href="pico.slate.min.css">
+    <link rel="stylesheet" href="pico.lime.min.css">
+    <link rel="stylesheet" href="pico.colors.min.css">
+    <title>Cueter</title>
+</head>
+<body class="pico-background-slate-800">
+<header class="container-fluid pico-background-slate-700">
+    <nav class="pico-color-lime-200">
+        <ul>
+            <li>
+                <strong class="pico-color-lime-200">Cueter</strong>
+            </li>
+        </ul>
+        <ul>
+            <li class="pico-color-lime-200">Coucou</li>
+        </ul>
+    </nav>
+</header>
+<main class="container-fluid pico-color-lime-200">
+    <div class="grid">
+        <div>
+            <form action="#" id="parse-form" class="grid">
+                <div>
+
+                    <fieldset role="group">
+                        <input type="submit" value="Parse">
+                        <input type="reset" value="Clear">
+                    </fieldset>
+                    <fieldset>
+                        <label for="parse-input">Cue file content</label>
+                        <textarea rows="30" id="parse-input" name="parse-input"></textarea>
+                    </fieldset>
+                    <fieldset>
+                        <label for="template">Template</label>
+                        <input type="text" id="template"
+                               value="{{{timestamp}}} {{{performer}}} - {{{title}}}"
+                               size="text"/>
+                    </fieldset>
+                </div>
+                <fieldset>
+                    <label for="parse-result">Parse result</label>
+                    <textarea rows="50" id="parse-result" readonly></textarea>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</main>
+<footer class="container-fluid">
+
+</footer>
+
+<script type="module" src="/src/main.ts"></script>
+</body>
 </html>

@@ -1,25 +1,21 @@
 import {parseCueText} from "./cueParser.ts";
+import {transformTracklist} from "../template.ts";
 
 export function doParse() {
     const input = document.querySelector<HTMLTextAreaElement>('#parse-input')!;
     const inputText = input.value.trim();
-    console.log(inputText);
     if (inputText.length > 0) {
         const result = parseCueText(inputText);
-        const resultElement = document.querySelector('#parse-result')!;
-        resultElement.innerHTML = JSON.stringify(result);
+        const transformed = transformTracklist(result);
+        console.log(transformed);
+        const resultElement = document.querySelector<HTMLTextAreaElement>('#parse-result')!;
+        resultElement.value = transformed;
     }
 }
 
-export function parseSetup(element: HTMLButtonElement) {
-    element.addEventListener('click', () => doParse());
-}
-
-export function clearInput(element: HTMLButtonElement) {
-    element.addEventListener('click', () => {
-        const input = document.querySelector<HTMLTextAreaElement>('#parse-input')!;
-        input.value = '';
-        const resultElement = document.querySelector('#parse-result')!;
-        resultElement.innerHTML = '';
+export function setupParse(element: HTMLFormElement) {
+    element.addEventListener('submit', (evt) => {
+        evt.preventDefault();
+        doParse();
     });
 }

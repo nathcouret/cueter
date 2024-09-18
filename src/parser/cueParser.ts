@@ -1,63 +1,32 @@
-import {createToken, CstParser, Lexer} from "chevrotain";
+import {CstParser} from "chevrotain";
 import {DateTime} from "luxon";
-
-const StringLiteral = createToken({
-    name: "StringLiteral",
-    pattern: /"(?:[^\\"]|\\(?:[bfnrtv"\\/]|u[0-9a-fA-F]{4}))*"/,
-});
-
-const WhiteSpace = createToken({
-    name: "WhiteSpace",
-    pattern: /\s+/,
-    group: Lexer.SKIPPED,
-});
-
-const DateTimeCue = createToken({
-    name: "DateTime",
-    pattern: /\d{4}-\d{2}-\d{2} [0-1]\d:[0-5]\d (AM|PM)/
-});
-
-const Timestamp = createToken({
-    name: "Timestamp",
-    pattern: /\d{2}:[0-5]\d:[0-5]\d/
-});
-
-const NumberLiteral = createToken({
-    name: "NumberLiteral",
-    pattern: /\d+/,
-    longer_alt: Timestamp
-});
-
-const REM = createToken({name: "REM", pattern: /REM/});
-const DATE = createToken({name: "DATE", pattern: /DATE/});
-const RECORDED_BY = createToken({name: "RECORDED_BY", pattern: /RECORDED_BY/});
-const TITLE = createToken({name: "TITLE", pattern: /TITLE/});
-const FILE = createToken({name: "FILE", pattern: /FILE/});
-const PERFORMER = createToken({name: "PERFORMER", pattern: /PERFORMER/});
-const FILETYPE = createToken({name: "AUDIOTYPE", pattern: /(WAVE)/});
-const TRACKTYPE = createToken({name: "TRACKTYPE", pattern: /(AUDIO)/});
-const TRACK = createToken({name: "TRACK", pattern: /TRACK/});
-const INDEX = createToken({name: "INDEX", pattern: /INDEX/});
-
-const cueTokens = [
-    REM,
+import {
+    CueContext,
+    DateTimeContext,
+    StringLiteralContext,
+    TimestampContext,
+    TrackContext,
+    TracksContext
+} from "./context.ts";
+import {
+    cueLexerInstance,
+    cueTokens,
     DATE,
-    RECORDED_BY,
-    TITLE,
-    PERFORMER,
+    DateTimeCue,
     FILE,
     FILETYPE,
-    TRACK,
-    TRACKTYPE,
     INDEX,
-    StringLiteral,
-    DateTimeCue,
     NumberLiteral,
+    PERFORMER,
+    RECORDED_BY,
+    REM,
+    StringLiteral,
     Timestamp,
-    WhiteSpace,
-];
-
-export const cueLexer = new Lexer(cueTokens, {});
+    TITLE,
+    TRACK,
+    TRACKTYPE
+} from "./lexer.ts";
+import {Tracklist} from "../tracklist.ts";
 
 export class CueCstParser extends CstParser {
     constructor() {
@@ -134,9 +103,9 @@ export class CueCstParser extends CstParser {
 
 }
 
-export const parserInstance = new CueCstParser();
+export const cueParserInstance = new CueCstParser();
 
-const BaseCueVisitorParser = parserInstance.getBaseCstVisitorConstructor();
+const BaseCueVisitorParser = cueParserInstance.getBaseCstVisitorConstructor();
 
 export class CueVisitor extends BaseCueVisitorParser {
     constructor() {
@@ -146,7 +115,7 @@ export class CueVisitor extends BaseCueVisitorParser {
         this.validateVisitor();
     }
 
-    cue(ctx) {
+    cue(ctx: CueContext) {
         const date = this.visit(ctx.dateLine);
         const recordedBy = this.visit(ctx.recordedByLine);
         const title = this.visit(ctx.titleLine);
@@ -164,7 +133,7 @@ export class CueVisitor extends BaseCueVisitorParser {
         }
     }
 
-    track(ctx) {
+    track(ctx: TrackContext) {
         const index = ctx.NumberLiteral[0].image;
         const title = this.visit(ctx.titleLine);
         const performer = this.visit(ctx.performerLine);
@@ -180,32 +149,32 @@ export class CueVisitor extends BaseCueVisitorParser {
         }
     }
 
-    tracks(ctx) {
+    tracks(ctx: TracksContext) {
         return ctx.track.map(track => this.visit(track)) || [];
     }
 
-    dateLine(ctx) {
+    dateLine(ctx: DateTimeContext) {
         const date = ctx.DateTime[0].image;
         return DateTime.fromFormat(date, "yyyy-MM-dd hh:mm a");
     }
 
-    recordedByLine(ctx) {
+    recordedByLine(ctx: StringLiteralContext) {
         return this.literalToString(ctx.StringLiteral[0]);
     }
 
-    titleLine(ctx) {
+    titleLine(ctx: StringLiteralContext) {
         return this.literalToString(ctx.StringLiteral[0]);
     }
 
-    performerLine(ctx) {
+    performerLine(ctx: StringLiteralContext) {
         return this.literalToString(ctx.StringLiteral[0]);
     }
 
-    fileLine(ctx) {
+    fileLine(ctx: StringLiteralContext) {
         return this.literalToString(ctx.StringLiteral[0]);
     }
 
-    indexLine(ctx) {
+    indexLine(ctx: TimestampContext) {
         return ctx.Timestamp[0].image;
     }
 
@@ -215,21 +184,20 @@ export class CueVisitor extends BaseCueVisitorParser {
     }
 }
 
-export const visitorInstance = new CueVisitor();
+export const cueVisitorInstance = new CueVisitor();
 
-export function parseCueText(text: string): string {
-    const lexingResult = cueLexer.tokenize(text);
+export function parseCueText(text: string): Tracklist {
+    const lexingResult = cueLexerInstance.tokenize(text);
     if (lexingResult.errors.length > 0) {
         console.log("lexing errors");
         console.log(lexingResult.errors);
     }
-    parserInstance.input = lexingResult.tokens;
-    const cst = parserInstance.cue();
-    if (parserInstance.errors.length > 0) {
+    cueParserInstance.input = lexingResult.tokens;
+    const cst = cueParserInstance.cue();
+    if (cueParserInstance.errors.length > 0) {
         console.log("parsing errors");
-        console.log(parserInstance.errors);
+        console.log(cueParserInstance.errors);
     }
 
-    const result = visitorInstance.visit(cst);
-    return result;
+    return cueVisitorInstance.visit(cst);
 }

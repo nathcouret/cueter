@@ -9,12 +9,16 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@types/handlebars": "^4.0.40",
+    "@types/lodash.debounce": "^4.0.9",
     "@types/luxon": "^3.4.2",
     "typescript": "^5.5.3",
     "vite": "^5.4.1"
   },
   "dependencies": {
     "chevrotain": "^11.0.3",
+    "handlebars": "^4.7.8",
+    "lodash.debounce": "^4.0.8",
     "luxon": "^3.5.0"
   }
 }
