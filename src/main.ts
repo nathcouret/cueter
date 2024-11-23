@@ -1,8 +1,6 @@
-import {setupParse} from "./parser/parseAction.ts";
-import {setupTemplateInput} from "./template.ts";
+import { bootstrapApplication } from '@angular/platform-browser';
+import { appConfig } from './app/app.config';
+import { AppComponent } from './app/app.component';
 
-setupParse(document.querySelector<HTMLFormElement>('#parse-form')!);
-setupTemplateInput(document.querySelector<HTMLInputElement>('#template')!);
-
-
-
+bootstrapApplication(AppComponent, appConfig)
+  .catch((err) => console.error(err));
