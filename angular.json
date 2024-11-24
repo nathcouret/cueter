@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "cueter-2": {
+    "cueter": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/cueter-2",
+            "outputPath": "dist/cueter",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "cueter-2:build:production"
+              "buildTarget": "cueter:build:production"
             },
             "development": {
-              "buildTarget": "cueter-2:build:development"
+              "buildTarget": "cueter:build:development"
             }
           },
           "defaultConfiguration": "development"
