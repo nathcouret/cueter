@@ -12,6 +12,7 @@ import {isNil} from "lodash";
     imports: [
         ReactiveFormsModule,
     ],
+    providers: [],
     standalone: true
 })
 export class ConverterComponent implements OnInit {
