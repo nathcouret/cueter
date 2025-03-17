@@ -8,13 +8,9 @@ import {
 } from "./context";
 import {DateTime} from "luxon";
 import {cueParserInstance} from "./cueParser";
-import {Injectable} from "@angular/core";
 
 const BaseCueVisitorParser = cueParserInstance.getBaseCstVisitorConstructor();
 
-@Injectable({
-    providedIn: 'root'
-})
 export class CueVisitorService extends BaseCueVisitorParser {
     constructor() {
         super();
@@ -92,3 +88,5 @@ export class CueVisitorService extends BaseCueVisitorParser {
         return literal.substring(1, literal.length - 1);
     }
 }
+
+export const cueVisitorService = new CueVisitorService();

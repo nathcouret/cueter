@@ -16,7 +16,6 @@ import {
     TRACK,
     TRACKTYPE
 } from "./tokens";
-import {InjectionToken} from "@angular/core";
 
 export class CueCstParser extends CstParser {
     constructor() {
@@ -94,5 +93,3 @@ export class CueCstParser extends CstParser {
 }
 
 export const cueParserInstance = new CueCstParser();
-
-export const CUE_PARSER_TOKEN = new InjectionToken<CueCstParser>("CueCstParser singleton");

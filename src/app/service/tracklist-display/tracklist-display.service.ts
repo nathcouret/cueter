@@ -1,10 +1,6 @@
 import {create} from "handlebars";
 import {Tracklist} from "../../model/tracklist";
-import {Injectable} from "@angular/core";
 
-@Injectable({
-    providedIn: 'root'
-})
 export class TracklistDisplayService {
 
     public static readonly DEFAULT_TRACK_TEMPLATE = "{{{timestamp}}} {{{performer}}} - {{{title}}}";
@@ -28,5 +24,6 @@ export class TracklistDisplayService {
     public resetTrackTemplate() {
         this.updateTrackTemplate(TracklistDisplayService.DEFAULT_TRACK_TEMPLATE);
     }
-
 }
+
+export const tracklistDisplayService = new TracklistDisplayService();

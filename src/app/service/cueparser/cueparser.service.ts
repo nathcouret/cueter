@@ -1,19 +1,13 @@
-import {Inject, Injectable} from "@angular/core";
 import {Lexer} from "chevrotain";
-import {CUE_PARSER_TOKEN, CueCstParser} from "./internals/cueParser";
+import {CueCstParser, cueParserInstance} from "./internals/cueParser";
 import {Tracklist} from "../../model/tracklist";
-import {CueVisitorService} from "./internals/cue-visitor.service";
-import {CUE_LEXER_TOKEN} from "./internals/lexer";
+import {cueVisitorService, CueVisitorService} from "./internals/cue-visitor.service";
+import {cueLexerInstance} from "./internals/lexer";
 
-@Injectable({
-    providedIn: 'root'
-})
 export class CueparserService {
 
     public constructor(
-        private visitor: CueVisitorService,
-        @Inject(CUE_LEXER_TOKEN) private lexer: Lexer,
-        @Inject(CUE_PARSER_TOKEN) private parser: CueCstParser
+        private visitor: CueVisitorService, private lexer: Lexer, private parser: CueCstParser
     ) {
 
     }
@@ -26,16 +20,17 @@ export class CueparserService {
         }
         const lexingResult = this.lexer.tokenize(text.trim());
         if (lexingResult.errors.length > 0) {
-            console.log("lexing errors");
-            console.log(lexingResult.errors);
+            console.error("lexing errors");
+            console.error(lexingResult.errors);
         }
         this.parser.input = lexingResult.tokens;
         const cst = this.parser.cue();
         if (this.parser.errors.length > 0) {
-            console.log("parsing errors");
-            console.log(this.parser.errors);
+            console.error("parsing errors");
+            console.error(this.parser.errors);
         }
         return this.visitor.visit(cst);
     }
-
 }
+
+export const cueParserService = new CueparserService(cueVisitorService, cueLexerInstance, cueParserInstance);
