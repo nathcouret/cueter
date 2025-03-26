@@ -19,6 +19,7 @@ export class TracklistDisplayService {
 
     public updateTrackTemplate(template: string) {
         this.mainTemplate = this.handleEnv.compile(`{{#each tracks}}{{> ${template}}\n{{/each}}`);
+        this.currentTemplate = template;
     }
 
     public resetTrackTemplate() {

@@ -1,55 +1,63 @@
 <template>
-  <main class="md:container md:mx-auto">
-    <div class="flex flex-row p-2">
-      <div class="basis-1/2 mr-2">
+  <section class="w-full relative mx-auto">
+    <div class="flex flex-wrap justify-center gap-1 pt-2 s:p-1">
+      <div class="w-full md:w-5/12">
         <form class="flex flex-col gap-3">
-          <fieldset class="flex flex-row gap-1">
-            <input type="submit" value="Convert" class="p-2 bg-emerald-900 text-slate-200"/>
-            <input type="reset" value="Reset" class="p2 bg-emerald-600 text-slate-200"/>
-          </fieldset>
-          <label for="cue-input" class="bg-emerald-900 text-slate-200">Cue text</label>
-          <textarea id="cue-input" type="text" v-model="input">
+          <input type="reset" value="Clear" class="flex-1 p-2 bg-emerald-600 text-slate-200" @click="clearInput"/>
+          <textarea class="bg-slate-50 min-h-80" id="cue-input" type="text" :value="input" @input="updateInput">
 </textarea>
-          <label for="cue-track-template" class="bg-emerald-900 text-slate-200">Template</label>
-          <input id="cue-track-template" type="text" v-model="template"
-                 class="border-solid border-2" readonly aria-readonly="true"/>
+          <label for="cue-track-template" class="bg-emerald-900 text-slate-200 p-2">Template</label>
+          <input id="cue-track-template" type="text" :value="template" @input="updateTemplate"
+                 class="bg-slate-50 pl-1 mb-3" readonly aria-readonly="true"/>
         </form>
       </div>
-      <div class="basis-1/2 flex flex-col gap-3">
+      <div class="w-full md:w-5/12">
         <h2 class="bg-emerald-900 text-slate-200 p-2 mb-3">Result</h2>
-        <textarea id="tracklist-result" class="bg-slate-50" readonly aria-readonly="true">{{output}}</textarea>
+        <textarea id="tracklist-result" class="w-full bg-slate-50  min-h-80" readonly aria-readonly="true"
+                  :value="output"></textarea>
       </div>
     </div>
-  </main>
+  </section>
 </template>
 
 <script setup lang="ts">
 
 import {computed, ref} from "vue";
-import {Tracklist} from "../../model/tracklist";
-import {cueParserService} from "../../service/cueparser/cueparser.service";
-import {
-  TracklistDisplayService,
-  tracklistDisplayService
-} from "../../service/tracklist-display/tracklist-display.service";
+import {useStore} from "vuex";
+import {TracklistActions} from "../../store/tracklist";
+
+const store = useStore();
 
 const input = ref<string>('');
-const template = ref<string>(TracklistDisplayService.DEFAULT_TRACK_TEMPLATE);
-const tracklist = computed<Tracklist | null>(() => {
-  if (!!input.value && input.value !== '') {
-    const parsed = cueParserService.parse(input.value);
-    if (parsed != null) {
-      return parsed;
-    }
+
+function updateInput(e: Event) {
+  const value = (e.target as HTMLTextAreaElement).value;
+  if (!!value && value !== '') {
+    input.value = value;
+    store.dispatch(TracklistActions.PARSE_TRACKLIST,
+        value
+    );
   }
-  return null;
-})
+}
+
+const template = computed(() => store.state.tracklistStore.template);
+
+function updateTemplate(e: Event) {
+  const newTemplate = (e.target as HTMLInputElement).value;
+  store.dispatch(
+      TracklistActions.CHANGE_TEMPLATE,
+      newTemplate
+  );
+}
+
+function clearInput(e: Event) {
+  e.preventDefault();
+  input.value = '';
+  store.dispatch(TracklistActions.CLEAR_TRACKLIST);
+}
+
 const output = computed<string>(() => {
-  const data = tracklist.value;
-  if (data === null) {
-    return '';
-  }
-  return tracklistDisplayService.transformTracklist(data, template.value);
+  return store.state.tracklistStore.output;
 });
 
 </script>

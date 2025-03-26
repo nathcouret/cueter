@@ -5,7 +5,9 @@ import Converter from "./pages/converter/Converter.vue";
 
 <template>
   <Banner></Banner>
-  <Converter></Converter>
+  <main>
+    <Converter></Converter>
+  </main>
 </template>
 
 <style>

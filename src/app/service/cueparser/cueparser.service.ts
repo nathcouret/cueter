@@ -13,8 +13,8 @@ export class CueparserService {
     }
 
 
-    parse(text?: string | null | undefined): Tracklist | null {
-        if (text === null || text === undefined || text === '') {
+    parse(text: string | null): Tracklist | null {
+        if (text === null || text === '') {
             console.error('Provided data is empty');
             return null;
         }

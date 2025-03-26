@@ -25,3 +25,6 @@ dist-ssr
 
 *.iml
 /.angular/
+
+.yarn/*
+.pnp.*
