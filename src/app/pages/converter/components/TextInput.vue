@@ -19,8 +19,6 @@ const {
   </label>
   <input class="bg-white border border-blue-gray" id="{{id}}" type="text" :value="value"
          @input="change" :readonly="readonly"/>
-  >
-
 </template>
 
 <style scoped>
