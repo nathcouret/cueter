@@ -1,9 +1,8 @@
 # Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: Build branch for PR
 
 on:
-  # Runs on pushes targeting the default branch
-  pull_request_target:
+  pull_request:
     branches:
       - 'main'
 
@@ -21,18 +20,19 @@ concurrency:
   group: 'build'
 
 jobs:
-  # Single deploy job since we're just deploying
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Enable Corepack
+        run: corepack enable yarn && yarn set version stable
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: 'npm'
+          cache: 'yarn'
       - name: Install dependencies
-        run: yarn install --check-caches --immutable --immutable-cache
+        run: yarn install --check-cache --immutable --immutable-cache
       - name: Build
         run: yarn run build
