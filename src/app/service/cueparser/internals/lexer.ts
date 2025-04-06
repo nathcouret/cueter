@@ -1,7 +1,11 @@
-import {Lexer} from "chevrotain";
+import {ILexerConfig, Lexer} from "chevrotain";
 import {cueTokens} from "./tokens";
 
-export const cueLexerInstance = new Lexer(cueTokens, {
-    positionTracking: 'full',
-    ensureOptimizations: true
-});
+const lexerConfig: ILexerConfig = {
+    positionTracking: "full",
+    ensureOptimizations: true,
+    skipValidations: import.meta.env.PROD,
+    traceInitPerf: import.meta.env.DEV
+}
+
+export const cueLexerInstance = new Lexer(cueTokens, lexerConfig);

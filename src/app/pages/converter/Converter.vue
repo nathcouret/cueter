@@ -3,18 +3,14 @@
     <div class="flex flex-wrap justify-center gap-1 pt-2 s:p-1">
       <div class="w-full md:w-5/12">
         <form class="flex flex-col gap-3">
-          <input type="reset" value="Clear" class="flex-1 p-2 bg-emerald-600 text-slate-200" @click="clearInput"/>
-          <textarea class="bg-slate-50 min-h-80" id="cue-input" type="text" :value="input" @input="updateInput">
-</textarea>
-          <label for="cue-track-template" class="bg-emerald-900 text-slate-200 p-2">Template</label>
-          <input id="cue-track-template" type="text" :value="template" @input="updateTemplate"
-                 class="bg-slate-50 pl-1 mb-3" readonly aria-readonly="true"/>
+          <TextareaInput id="cue-input" title="Input" :value="input" :change="updateInput"></TextareaInput>
+          <input type="reset" value="Clear" class="w-1/2 p-2 bg-taupe text-cream" @click="clearInput"/>
+          <TextInput id="cue-track-template" title="Template" :value="template" :change="updateTemple"></TextInput>
         </form>
       </div>
-      <div class="w-full md:w-5/12">
-        <h2 class="bg-emerald-900 text-slate-200 p-2 mb-3">Result</h2>
-        <textarea id="tracklist-result" class="w-full bg-slate-50  min-h-80" readonly aria-readonly="true"
-                  :value="output"></textarea>
+      <div class="w-full md:w-5/12 flex flex-col gap-3">
+        <TextareaInput id="tracklist-result" title="Result" :value="output" readonly></TextareaInput>
+        <button @click="copy" class="bg-taupe text-cream w-1/2 p-2">Copy to clipboard</button>
       </div>
     </div>
   </section>
@@ -25,6 +21,8 @@
 import {computed, ref} from "vue";
 import {useStore} from "vuex";
 import {TracklistActions} from "../../store/tracklist";
+import TextareaInput from "./components/TextareaInput.vue";
+import TextInput from "./components/TextInput.vue";
 
 const store = useStore();
 
@@ -59,5 +57,16 @@ function clearInput(e: Event) {
 const output = computed<string>(() => {
   return store.state.tracklistStore.output;
 });
+
+async function copy() {
+  if (store.state.tracklistStore.output !== null) {
+    try {
+      await navigator.clipboard.writeText(store.state.tracklistStore.output);
+      console.log('Copied!');
+    } catch (error: Error) {
+      console.error(error.message);
+    }
+  }
+}
 
 </script>

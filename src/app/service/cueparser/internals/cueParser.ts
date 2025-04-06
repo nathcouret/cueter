@@ -1,4 +1,4 @@
-import {CstParser} from "chevrotain";
+import {CstParser, IParserConfig} from "chevrotain";
 import {
     cueTokens,
     DATE,
@@ -17,11 +17,14 @@ import {
     TRACKTYPE
 } from "./tokens";
 
+const parserConfig: IParserConfig = {
+    recoveryEnabled: true,
+    skipValidations: import.meta.env.PROD
+}
+
 export class CueCstParser extends CstParser {
     constructor() {
-        super(cueTokens, {
-            recoveryEnabled: true,
-        });
+        super(cueTokens, parserConfig);
         // very important to call this after all the rules have been setup.
         // otherwise the parser may not work correctly as it will lack information
         // derived from the self analysis.
@@ -31,9 +34,13 @@ export class CueCstParser extends CstParser {
 
     public cue = this.RULE("cue", () => {
         this.SUBRULE(this.dateLine);
-        this.SUBRULE(this.recordedByLine);
+        this.OPTION(() =>
+            this.SUBRULE(this.recordedByLine)
+        );
         this.SUBRULE(this.titleLine);
-        this.SUBRULE(this.performerLine);
+        this.OPTION1(() =>
+            this.SUBRULE(this.performerLine)
+        );
         this.SUBRULE(this.fileLine);
         this.SUBRULE(this.tracks);
     });
