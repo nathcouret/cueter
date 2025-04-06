@@ -1,6 +1,5 @@
 import {createToken, Lexer} from "chevrotain";
 
-
 const keyword = createToken({
     name: 'keyword',
     pattern: Lexer.NA,
@@ -19,7 +18,7 @@ export const StringLiteral = createToken({
 
 export const DateTimeCue = createToken({
     name: "DateTime",
-    pattern: /\d{4}-\d{2}-\d{2} [0-1]\d:[0-5]\d (AM|PM)/
+    pattern: /\d{4}-\d{2}-\d{2}(\s[0-1]\d:[0-5]\d\s(AM|PM))?/
 });
 
 export const Timestamp = createToken({
@@ -62,8 +61,3 @@ export const cueTokens = [
     Timestamp,
     WhiteSpace,
 ];
-
-export const cueLexerInstance = new Lexer(cueTokens, {
-    positionTracking: 'onlyStart',
-    ensureOptimizations: true
-});

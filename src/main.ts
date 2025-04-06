@@ -1,8 +1,5 @@
-import {setupParse} from "./parser/parseAction.ts";
-import {setupTemplateInput} from "./template.ts";
+import {createApp} from "vue";
+import App from "./app/App.vue";
+import {store} from "./app/store/store";
 
-setupParse(document.querySelector<HTMLFormElement>('#parse-form')!);
-setupTemplateInput(document.querySelector<HTMLInputElement>('#template')!);
-
-
-
+createApp(App).use(store).mount("#app");
