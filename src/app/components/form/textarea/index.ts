@@ -1,0 +1,12 @@
+export {default as TextAreaInput} from "./TextareaInput.vue";
+
+export interface TextAreaProps {
+    id: string,
+    title: string,
+    value: string
+    readonly?: boolean
+}
+
+export interface TextAreaValueChange {
+    value: string;
+}

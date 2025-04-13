@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "chevrotain": "^11.0.3",
-    "handlebars": "^4.7.8",
     "luxon": "^3.5.0",
     "tailwindcss": "^4.0.14",
     "tslib": "^2.3.0",
@@ -19,7 +18,6 @@
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.0.14",
-    "@types/handlebars": "^4.0.40",
     "@types/luxon": "^3.4.2",
     "@vitejs/plugin-vue": "^5.2.1",
     "postcss": "^8.4.49",
