@@ -28,11 +28,9 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./",\
         "packageDependencies": [\
           ["@tailwindcss/vite", "virtual:a35bc4893f75456b5a55624df4958ea6fcc0893d722f009f45f2f76ed7f1c7ea2a2cf7206e363da752b44213270cb4c0cd5b1ed3cbd274a27949a7684e74947b#npm:4.0.14"],\
-          ["@types/handlebars", "npm:4.0.40"],\
           ["@types/luxon", "npm:3.4.2"],\
           ["@vitejs/plugin-vue", "virtual:a35bc4893f75456b5a55624df4958ea6fcc0893d722f009f45f2f76ed7f1c7ea2a2cf7206e363da752b44213270cb4c0cd5b1ed3cbd274a27949a7684e74947b#npm:5.2.3"],\
           ["chevrotain", "npm:11.0.3"],\
-          ["handlebars", "npm:4.7.8"],\
           ["luxon", "npm:3.5.0"],\
           ["postcss", "npm:8.5.3"],\
           ["rimraf", "npm:6.0.1"],\
@@ -773,15 +771,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["@types/handlebars", [\
-      ["npm:4.0.40", {\
-        "packageLocation": "../../../.yarn/berry/cache/@types-handlebars-npm-4.0.40-718a18eab3-10c0.zip/node_modules/@types/handlebars/",\
-        "packageDependencies": [\
-          ["@types/handlebars", "npm:4.0.40"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["@types/luxon", [\
       ["npm:3.4.2", {\
         "packageLocation": "../../../.yarn/berry/cache/@types-luxon-npm-3.4.2-092583f006-10c0.zip/node_modules/@types/luxon/",\
@@ -1108,11 +1097,9 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["cueter", "workspace:."],\
           ["@tailwindcss/vite", "virtual:a35bc4893f75456b5a55624df4958ea6fcc0893d722f009f45f2f76ed7f1c7ea2a2cf7206e363da752b44213270cb4c0cd5b1ed3cbd274a27949a7684e74947b#npm:4.0.14"],\
-          ["@types/handlebars", "npm:4.0.40"],\
           ["@types/luxon", "npm:3.4.2"],\
           ["@vitejs/plugin-vue", "virtual:a35bc4893f75456b5a55624df4958ea6fcc0893d722f009f45f2f76ed7f1c7ea2a2cf7206e363da752b44213270cb4c0cd5b1ed3cbd274a27949a7684e74947b#npm:5.2.3"],\
           ["chevrotain", "npm:11.0.3"],\
-          ["handlebars", "npm:4.7.8"],\
           ["luxon", "npm:3.5.0"],\
           ["postcss", "npm:8.5.3"],\
           ["rimraf", "npm:6.0.1"],\
@@ -1347,20 +1334,6 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../.yarn/berry/cache/graceful-fs-npm-4.2.11-24bb648a68-10c0.zip/node_modules/graceful-fs/",\
         "packageDependencies": [\
           ["graceful-fs", "npm:4.2.11"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["handlebars", [\
-      ["npm:4.7.8", {\
-        "packageLocation": "../../../.yarn/berry/cache/handlebars-npm-4.7.8-25244c2c82-10c0.zip/node_modules/handlebars/",\
-        "packageDependencies": [\
-          ["handlebars", "npm:4.7.8"],\
-          ["minimist", "npm:1.2.8"],\
-          ["neo-async", "npm:2.6.2"],\
-          ["source-map", "npm:0.6.1"],\
-          ["uglify-js", "npm:3.19.3"],\
-          ["wordwrap", "npm:1.0.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -1680,15 +1653,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["minimist", [\
-      ["npm:1.2.8", {\
-        "packageLocation": "../../../.yarn/berry/cache/minimist-npm-1.2.8-d7af7b1dce-10c0.zip/node_modules/minimist/",\
-        "packageDependencies": [\
-          ["minimist", "npm:1.2.8"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["minipass", [\
       ["npm:3.3.6", {\
         "packageLocation": "../../../.yarn/berry/cache/minipass-npm-3.3.6-b8d93a945b-10c0.zip/node_modules/minipass/",\
@@ -1802,15 +1766,6 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../.yarn/berry/cache/negotiator-npm-1.0.0-47d727e27e-10c0.zip/node_modules/negotiator/",\
         "packageDependencies": [\
           ["negotiator", "npm:1.0.0"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["neo-async", [\
-      ["npm:2.6.2", {\
-        "packageLocation": "../../../.yarn/berry/cache/neo-async-npm-2.6.2-75d6902586-10c0.zip/node_modules/neo-async/",\
-        "packageDependencies": [\
-          ["neo-async", "npm:2.6.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -2068,15 +2023,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["source-map", [\
-      ["npm:0.6.1", {\
-        "packageLocation": "../../../.yarn/berry/cache/source-map-npm-0.6.1-1a3621db16-10c0.zip/node_modules/source-map/",\
-        "packageDependencies": [\
-          ["source-map", "npm:0.6.1"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["source-map-js", [\
       ["npm:1.2.1", {\
         "packageLocation": "../../../.yarn/berry/cache/source-map-js-npm-1.2.1-b9a47d7e1a-10c0.zip/node_modules/source-map-js/",\
@@ -2192,15 +2138,6 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../.yarn/berry/cache/typescript-patch-8964a48ba3-10c0.zip/node_modules/typescript/",\
         "packageDependencies": [\
           ["typescript", "patch:typescript@npm%3A5.6.3#optional!builtin<compat/typescript>::version=5.6.3&hash=8c6c40"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["uglify-js", [\
-      ["npm:3.19.3", {\
-        "packageLocation": "../../../.yarn/berry/cache/uglify-js-npm-3.19.3-d73835bac2-10c0.zip/node_modules/uglify-js/",\
-        "packageDependencies": [\
-          ["uglify-js", "npm:3.19.3"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -2353,15 +2290,6 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["which", "npm:5.0.0"],\
           ["isexe", "npm:3.1.1"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["wordwrap", [\
-      ["npm:1.0.0", {\
-        "packageLocation": "../../../.yarn/berry/cache/wordwrap-npm-1.0.0-ae57a645e8-10c0.zip/node_modules/wordwrap/",\
-        "packageDependencies": [\
-          ["wordwrap", "npm:1.0.0"]\
         ],\
         "linkType": "HARD"\
       }]\

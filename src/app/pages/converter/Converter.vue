@@ -3,13 +3,15 @@
     <div class="flex flex-wrap justify-center gap-1 pt-2 s:p-1">
       <div class="w-full md:w-5/12">
         <form class="flex flex-col gap-3">
-          <TextareaInput id="cue-input" title="Input" :value="input" :change="updateInput"></TextareaInput>
+          <TextAreaInput id="cue-input" title="Input" :value="input" @change="updateInput"></TextAreaInput>
           <input type="reset" value="Clear" class="w-1/2 p-2 bg-taupe text-cream" @click="clearInput"/>
-          <TextInput id="cue-track-template" title="Template" :value="template" :change="updateTemple"></TextInput>
+          <ToggleButton id="artist-toggle" :init-checked="includeArtistName"
+                        @toggle="toggleIncludeArtistName">Include artist name
+          </ToggleButton>
         </form>
       </div>
       <div class="w-full md:w-5/12 flex flex-col gap-3">
-        <TextareaInput id="tracklist-result" title="Result" :value="output" readonly></TextareaInput>
+        <TextAreaInput id="tracklist-result" title="Result" :value="output" readonly></TextAreaInput>
         <button @click="copy" class="bg-taupe text-cream w-1/2 p-2">Copy to clipboard</button>
       </div>
     </div>
@@ -20,53 +22,37 @@
 
 import {computed, ref} from "vue";
 import {useStore} from "vuex";
-import {TracklistActions} from "../../store/tracklist";
-import TextareaInput from "./components/TextareaInput.vue";
-import TextInput from "./components/TextInput.vue";
+import {CLEAR_TRACKLIST, COPY_TO_CLIPBOARD, PARSE_TRACKLIST, SET_INCLUDE_ARTIST_NAME, storeKey,} from "../../store";
+import {isEmpty} from "../../utils";
+import {TextAreaInput, TextAreaValueChange, ToggleButton, ToggleButtonEvent} from "../../components/form";
 
-const store = useStore();
+const store = useStore(storeKey);
 
 const input = ref<string>('');
+const output = computed<string>(() => store.state.output || "");
+const includeArtistName = computed<boolean>(() => store.state.includeArtistName);
 
-function updateInput(e: Event) {
-  const value = (e.target as HTMLTextAreaElement).value;
-  if (!!value && value !== '') {
+function updateInput({value}: TextAreaValueChange) {
+  if (!isEmpty(value)) {
     input.value = value;
-    store.dispatch(TracklistActions.PARSE_TRACKLIST,
+    store.dispatch(PARSE_TRACKLIST,
         value
     );
   }
 }
 
-const template = computed(() => store.state.tracklistStore.template);
-
-function updateTemplate(e: Event) {
-  const newTemplate = (e.target as HTMLInputElement).value;
-  store.dispatch(
-      TracklistActions.CHANGE_TEMPLATE,
-      newTemplate
-  );
-}
-
 function clearInput(e: Event) {
   e.preventDefault();
   input.value = '';
-  store.dispatch(TracklistActions.CLEAR_TRACKLIST);
+  store.dispatch(CLEAR_TRACKLIST);
 }
 
-const output = computed<string>(() => {
-  return store.state.tracklistStore.output;
-});
+function toggleIncludeArtistName({value}: ToggleButtonEvent) {
+  store.dispatch(SET_INCLUDE_ARTIST_NAME, value);
+}
 
-async function copy() {
-  if (store.state.tracklistStore.output !== null) {
-    try {
-      await navigator.clipboard.writeText(store.state.tracklistStore.output);
-      console.log('Copied!');
-    } catch (error: Error) {
-      console.error(error.message);
-    }
-  }
+function copy() {
+  store.dispatch(COPY_TO_CLIPBOARD);
 }
 
 </script>
