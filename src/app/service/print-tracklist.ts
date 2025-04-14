@@ -6,10 +6,14 @@ export interface PrintContext {
 
 export function printTracklist(tracklist: Tracklist, context: PrintContext): string {
     const tracks = tracklist.tracks.map(({timestamp, title, performer}) => {
-        if (context.includeArtistName) {
-            return `${timestamp} ${performer} - ${title}`;
+        let time = timestamp;
+        if (!tracklist.exceedHour) {
+            time = timestamp.substring(3);
         }
-        return `${timestamp} ${title}`;
+        if (context.includeArtistName) {
+            return `${time} ${performer} - ${title}`;
+        }
+        return `${time} ${title}`;
     });
     return tracks.join('\n');
-};
+}

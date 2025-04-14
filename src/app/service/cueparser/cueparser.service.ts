@@ -13,7 +13,7 @@ export class CueparserService {
     }
 
 
-    parse(text: string | null): Tracklist | null {
+    public parse(text: string | null): Tracklist | null {
         if (text === null || text === '') {
             console.error('Provided data is empty');
             return null;
@@ -29,7 +29,18 @@ export class CueparserService {
             console.error("parsing errors");
             console.error(this.parser.errors);
         }
-        return this.visitor.visit(cst);
+        const tracklist = this.visitor.visit(cst);
+        if (tracklist !== null) {
+            this.postprocess(tracklist);
+        }
+        return tracklist;
+    }
+
+    private postprocess(tracklist: Tracklist) {
+        const tracks = tracklist.tracks;
+        const lastTrack = tracks[tracks.length - 1];
+        const times = lastTrack.timestamp.split(":");
+        tracklist.exceedHour = times.length === 3 && times[0] !== "00";
     }
 }
 
