@@ -10,6 +10,7 @@ export interface Tracklist extends AbstractTrack {
     date: DateTime;
     recordedBy: string;
     tracks: Track[];
+    exceedHour: boolean;
 }
 
 export interface Track extends AbstractTrack{
