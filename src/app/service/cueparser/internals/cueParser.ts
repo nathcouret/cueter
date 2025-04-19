@@ -84,7 +84,9 @@ export class CueCstParser extends CstParser {
         this.CONSUME(NumberLiteral);
         this.CONSUME(TRACKTYPE);
         this.SUBRULE(this.titleLine);
-        this.SUBRULE(this.performerLine);
+        this.OPTION(() =>
+            this.SUBRULE(this.performerLine)
+        );
         this.SUBRULE(this.fileLine);
         this.SUBRULE(this.indexLine);
     });

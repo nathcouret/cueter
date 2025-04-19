@@ -1,4 +1,5 @@
 import {type Tracklist} from "../model/tracklist";
+import {isNil} from "../utils";
 
 export interface PrintContext {
     includeArtistName: boolean;
@@ -10,7 +11,7 @@ export function printTracklist(tracklist: Tracklist, context: PrintContext): str
         if (!tracklist.exceedHour) {
             time = timestamp.substring(3);
         }
-        if (context.includeArtistName) {
+        if (context.includeArtistName && !isNil(performer)) {
             return `${time} ${performer} - ${title}`;
         }
         return `${time} ${title}`;
