@@ -27,3 +27,4 @@ dist-ssr
 /.angular/
 
 .yarn/*
+!.yarn/cache

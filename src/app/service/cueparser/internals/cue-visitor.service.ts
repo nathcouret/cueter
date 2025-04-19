@@ -6,7 +6,6 @@ import {
     TrackContext,
     TracksContext
 } from "./context";
-import {DateTime} from "luxon";
 import {cueParserInstance} from "./cueParser";
 
 const BaseCueVisitorParser = cueParserInstance.getBaseCstVisitorConstructor();
@@ -58,8 +57,7 @@ export class CueVisitorService extends BaseCueVisitorParser {
     }
 
     dateLine(ctx: DateTimeContext) {
-        const date = ctx.DateTime[0].image;
-        return DateTime.fromFormat(date, "yyyy-MM-dd hh:mm a");
+        return ctx.DateTime[0].image;
     }
 
     recordedByLine(ctx: StringLiteralContext) {

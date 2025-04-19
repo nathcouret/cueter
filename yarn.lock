@@ -867,13 +867,12 @@ __metadata:
     "@types/luxon": "npm:^3.4.2"
     "@vitejs/plugin-vue": "npm:^5.2.1"
     chevrotain: "npm:^11.0.3"
-    luxon: "npm:^3.5.0"
     postcss: "npm:^8.4.49"
     rimraf: "npm:^6.0.1"
     tailwindcss: "npm:^4.0.14"
     tslib: "npm:^2.3.0"
     typescript: "npm:~5.6.2"
-    vite: "npm:^6.2.1"
+    vite: "npm:6.2.6"
     vue: "npm:^3.5.13"
     vuex: "npm:4.0.2"
   languageName: unknown
@@ -1376,13 +1375,6 @@ __metadata:
   version: 11.0.2
   resolution: "lru-cache@npm:11.0.2"
   checksum: 10c0/c993b8e06ead0b24b969c1dbb5b301716aed66e320e9014a80012f5febe280b438f28ff50046b2c55ff404e889351ccb332ff91f8dd175a21f5eae80e3fb155f
-  languageName: node
-  linkType: hard
-
-"luxon@npm:^3.5.0":
-  version: 3.5.0
-  resolution: "luxon@npm:3.5.0"
-  checksum: 10c0/335789bba95077db831ef99894edadeb23023b3eb2137a1b56acd0d290082b691cf793143d69e30bc069ec95f0b49f36419f48e951c68014f19ffe12045e3494
   languageName: node
   linkType: hard
 
@@ -1953,9 +1945,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^6.2.1":
-  version: 6.2.2
-  resolution: "vite@npm:6.2.2"
+"vite@npm:6.2.6":
+  version: 6.2.6
+  resolution: "vite@npm:6.2.6"
   dependencies:
     esbuild: "npm:^0.25.0"
     fsevents: "npm:~2.3.3"
@@ -2001,7 +1993,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 10c0/52f5b1c10cfe5e3b6382c6de1811ebbf76df9b5a8bab3d65169446c6b54a5f1528f775b1548009a6d8aad11def20fba046bb3e9abb10c0c2c9ccd78118623bb8
+  checksum: 10c0/68a2ed3e61bdd654c59b817b4f3203065241c66d1739faa707499130f3007bc3a666c7a8320a4198e275e62b5e4d34d9b78a6533f69e321d366e76f5093b2071
   languageName: node
   linkType: hard
 

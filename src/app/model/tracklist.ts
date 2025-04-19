@@ -1,5 +1,3 @@
-import {DateTime} from "luxon";
-
 interface AbstractTrack {
     file: string;
     performer: string;
@@ -7,7 +5,7 @@ interface AbstractTrack {
 }
 
 export interface Tracklist extends AbstractTrack {
-    date: DateTime;
+    date: string;
     recordedBy: string;
     tracks: Track[];
     exceedHour: boolean;

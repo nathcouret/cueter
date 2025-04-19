@@ -39,7 +39,7 @@ jobs:
           node-version: 22
           cache: 'yarn'
       - name: Install dependencies
-        run: yarn install --check-cache
+        run: yarn install --check-cache --immutable --immutable-cache
       - name: Build
         run: yarn run build
       - name: Setup Pages
