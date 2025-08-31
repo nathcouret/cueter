@@ -17,6 +17,7 @@ const RAW_RUNTIME_STATE =
   ],\
   "enableTopLevelFallback": true,\
   "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
+  "pnpZipBackend": "libzip",\
   "fallbackExclusionList": [\
     ["cueter", ["workspace:."]]\
   ],\
@@ -31,6 +32,8 @@ const RAW_RUNTIME_STATE =
           ["@types/luxon", "npm:3.4.2"],\
           ["@vitejs/plugin-vue", "virtual:a35bc4893f75456b5a55624df4958ea6fcc0893d722f009f45f2f76ed7f1c7ea2a2cf7206e363da752b44213270cb4c0cd5b1ed3cbd274a27949a7684e74947b#npm:5.2.3"],\
           ["chevrotain", "npm:11.0.3"],\
+          ["cueter", "workspace:."],\
+          ["fast-xml-parser", "npm:5.2.5"],\
           ["postcss", "npm:8.5.3"],\
           ["rimraf", "npm:6.0.1"],\
           ["tailwindcss", "npm:4.0.14"],\
@@ -75,9 +78,9 @@ const RAW_RUNTIME_STATE =
       ["npm:7.26.10", {\
         "packageLocation": "./.yarn/cache/@babel-types-npm-7.26.10-1df6b33135-7a7f83f568.zip/node_modules/@babel/types/",\
         "packageDependencies": [\
-          ["@babel/types", "npm:7.26.10"],\
           ["@babel/helper-string-parser", "npm:7.25.9"],\
-          ["@babel/helper-validator-identifier", "npm:7.25.9"]\
+          ["@babel/helper-validator-identifier", "npm:7.25.9"],\
+          ["@babel/types", "npm:7.26.10"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -746,9 +749,9 @@ const RAW_RUNTIME_STATE =
       ["virtual:a35bc4893f75456b5a55624df4958ea6fcc0893d722f009f45f2f76ed7f1c7ea2a2cf7206e363da752b44213270cb4c0cd5b1ed3cbd274a27949a7684e74947b#npm:4.0.14", {\
         "packageLocation": "./.yarn/__virtual__/@tailwindcss-vite-virtual-fd893a7a1c/0/cache/@tailwindcss-vite-npm-4.0.14-c66c9ae40b-7c232fb68c.zip/node_modules/@tailwindcss/vite/",\
         "packageDependencies": [\
-          ["@tailwindcss/vite", "virtual:a35bc4893f75456b5a55624df4958ea6fcc0893d722f009f45f2f76ed7f1c7ea2a2cf7206e363da752b44213270cb4c0cd5b1ed3cbd274a27949a7684e74947b#npm:4.0.14"],\
           ["@tailwindcss/node", "npm:4.0.14"],\
           ["@tailwindcss/oxide", "npm:4.0.14"],\
+          ["@tailwindcss/vite", "virtual:a35bc4893f75456b5a55624df4958ea6fcc0893d722f009f45f2f76ed7f1c7ea2a2cf7206e363da752b44213270cb4c0cd5b1ed3cbd274a27949a7684e74947b#npm:4.0.14"],\
           ["@types/vite", null],\
           ["lightningcss", "npm:1.29.2"],\
           ["tailwindcss", "npm:4.0.14"],\
@@ -790,9 +793,9 @@ const RAW_RUNTIME_STATE =
       ["virtual:a35bc4893f75456b5a55624df4958ea6fcc0893d722f009f45f2f76ed7f1c7ea2a2cf7206e363da752b44213270cb4c0cd5b1ed3cbd274a27949a7684e74947b#npm:5.2.3", {\
         "packageLocation": "./.yarn/__virtual__/@vitejs-plugin-vue-virtual-e6569d26a0/0/cache/@vitejs-plugin-vue-npm-5.2.3-cdfec94325-34a719c705.zip/node_modules/@vitejs/plugin-vue/",\
         "packageDependencies": [\
-          ["@vitejs/plugin-vue", "virtual:a35bc4893f75456b5a55624df4958ea6fcc0893d722f009f45f2f76ed7f1c7ea2a2cf7206e363da752b44213270cb4c0cd5b1ed3cbd274a27949a7684e74947b#npm:5.2.3"],\
           ["@types/vite", null],\
           ["@types/vue", null],\
+          ["@vitejs/plugin-vue", "virtual:a35bc4893f75456b5a55624df4958ea6fcc0893d722f009f45f2f76ed7f1c7ea2a2cf7206e363da752b44213270cb4c0cd5b1ed3cbd274a27949a7684e74947b#npm:5.2.3"],\
           ["vite", "virtual:a35bc4893f75456b5a55624df4958ea6fcc0893d722f009f45f2f76ed7f1c7ea2a2cf7206e363da752b44213270cb4c0cd5b1ed3cbd274a27949a7684e74947b#npm:6.2.6"],\
           ["vue", "virtual:a35bc4893f75456b5a55624df4958ea6fcc0893d722f009f45f2f76ed7f1c7ea2a2cf7206e363da752b44213270cb4c0cd5b1ed3cbd274a27949a7684e74947b#npm:3.5.13"]\
         ],\
@@ -809,8 +812,8 @@ const RAW_RUNTIME_STATE =
       ["npm:3.5.13", {\
         "packageLocation": "./.yarn/cache/@vue-compiler-core-npm-3.5.13-b0c91e9970-b89f3e3ca9.zip/node_modules/@vue/compiler-core/",\
         "packageDependencies": [\
-          ["@vue/compiler-core", "npm:3.5.13"],\
           ["@babel/parser", "npm:7.26.10"],\
+          ["@vue/compiler-core", "npm:3.5.13"],\
           ["@vue/shared", "npm:3.5.13"],\
           ["entities", "npm:4.5.0"],\
           ["estree-walker", "npm:2.0.2"],\
@@ -823,8 +826,8 @@ const RAW_RUNTIME_STATE =
       ["npm:3.5.13", {\
         "packageLocation": "./.yarn/cache/@vue-compiler-dom-npm-3.5.13-8785a9ba19-8f424a7188.zip/node_modules/@vue/compiler-dom/",\
         "packageDependencies": [\
-          ["@vue/compiler-dom", "npm:3.5.13"],\
           ["@vue/compiler-core", "npm:3.5.13"],\
+          ["@vue/compiler-dom", "npm:3.5.13"],\
           ["@vue/shared", "npm:3.5.13"]\
         ],\
         "linkType": "HARD"\
@@ -834,10 +837,10 @@ const RAW_RUNTIME_STATE =
       ["npm:3.5.13", {\
         "packageLocation": "./.yarn/cache/@vue-compiler-sfc-npm-3.5.13-3213a0466e-5fd57895ce.zip/node_modules/@vue/compiler-sfc/",\
         "packageDependencies": [\
-          ["@vue/compiler-sfc", "npm:3.5.13"],\
           ["@babel/parser", "npm:7.26.10"],\
           ["@vue/compiler-core", "npm:3.5.13"],\
           ["@vue/compiler-dom", "npm:3.5.13"],\
+          ["@vue/compiler-sfc", "npm:3.5.13"],\
           ["@vue/compiler-ssr", "npm:3.5.13"],\
           ["@vue/shared", "npm:3.5.13"],\
           ["estree-walker", "npm:2.0.2"],\
@@ -852,8 +855,8 @@ const RAW_RUNTIME_STATE =
       ["npm:3.5.13", {\
         "packageLocation": "./.yarn/cache/@vue-compiler-ssr-npm-3.5.13-e1cdeef007-67621337b1.zip/node_modules/@vue/compiler-ssr/",\
         "packageDependencies": [\
-          ["@vue/compiler-ssr", "npm:3.5.13"],\
           ["@vue/compiler-dom", "npm:3.5.13"],\
+          ["@vue/compiler-ssr", "npm:3.5.13"],\
           ["@vue/shared", "npm:3.5.13"]\
         ],\
         "linkType": "HARD"\
@@ -882,8 +885,8 @@ const RAW_RUNTIME_STATE =
       ["npm:3.5.13", {\
         "packageLocation": "./.yarn/cache/@vue-runtime-core-npm-3.5.13-6c90bdb869-b6be854bf0.zip/node_modules/@vue/runtime-core/",\
         "packageDependencies": [\
-          ["@vue/runtime-core", "npm:3.5.13"],\
           ["@vue/reactivity", "npm:3.5.13"],\
+          ["@vue/runtime-core", "npm:3.5.13"],\
           ["@vue/shared", "npm:3.5.13"]\
         ],\
         "linkType": "HARD"\
@@ -893,9 +896,9 @@ const RAW_RUNTIME_STATE =
       ["npm:3.5.13", {\
         "packageLocation": "./.yarn/cache/@vue-runtime-dom-npm-3.5.13-d22a720eb3-8ee7f3980d.zip/node_modules/@vue/runtime-dom/",\
         "packageDependencies": [\
-          ["@vue/runtime-dom", "npm:3.5.13"],\
           ["@vue/reactivity", "npm:3.5.13"],\
           ["@vue/runtime-core", "npm:3.5.13"],\
+          ["@vue/runtime-dom", "npm:3.5.13"],\
           ["@vue/shared", "npm:3.5.13"],\
           ["csstype", "npm:3.1.3"]\
         ],\
@@ -913,9 +916,9 @@ const RAW_RUNTIME_STATE =
       ["virtual:aa04e4ae68096a615ea2e4dcb626908ac94c21f69309d4b4b60b9d42c34c4e4161f622084c1a30dab10874ce74f70183a7d157b7838625f12fb5e3103c946d74#npm:3.5.13", {\
         "packageLocation": "./.yarn/__virtual__/@vue-server-renderer-virtual-6d14506c02/0/cache/@vue-server-renderer-npm-3.5.13-d23f3ccee8-f500bdabc1.zip/node_modules/@vue/server-renderer/",\
         "packageDependencies": [\
-          ["@vue/server-renderer", "virtual:aa04e4ae68096a615ea2e4dcb626908ac94c21f69309d4b4b60b9d42c34c4e4161f622084c1a30dab10874ce74f70183a7d157b7838625f12fb5e3103c946d74#npm:3.5.13"],\
           ["@types/vue", null],\
           ["@vue/compiler-ssr", "npm:3.5.13"],\
+          ["@vue/server-renderer", "virtual:aa04e4ae68096a615ea2e4dcb626908ac94c21f69309d4b4b60b9d42c34c4e4161f622084c1a30dab10874ce74f70183a7d157b7838625f12fb5e3103c946d74#npm:3.5.13"],\
           ["@vue/shared", "npm:3.5.13"],\
           ["vue", "virtual:a35bc4893f75456b5a55624df4958ea6fcc0893d722f009f45f2f76ed7f1c7ea2a2cf7206e363da752b44213270cb4c0cd5b1ed3cbd274a27949a7684e74947b#npm:3.5.13"]\
         ],\
@@ -999,8 +1002,8 @@ const RAW_RUNTIME_STATE =
       ["npm:2.0.1", {\
         "packageLocation": "./.yarn/cache/brace-expansion-npm-2.0.1-17aa2616f9-b358f2fe06.zip/node_modules/brace-expansion/",\
         "packageDependencies": [\
-          ["brace-expansion", "npm:2.0.1"],\
-          ["balanced-match", "npm:1.0.2"]\
+          ["balanced-match", "npm:1.0.2"],\
+          ["brace-expansion", "npm:2.0.1"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -1009,8 +1012,8 @@ const RAW_RUNTIME_STATE =
       ["npm:19.0.1", {\
         "packageLocation": "./.yarn/cache/cacache-npm-19.0.1-395cba1936-01f2134e1b.zip/node_modules/cacache/",\
         "packageDependencies": [\
-          ["cacache", "npm:19.0.1"],\
           ["@npmcli/fs", "npm:4.0.0"],\
+          ["cacache", "npm:19.0.1"],\
           ["fs-minipass", "npm:3.0.3"],\
           ["glob", "npm:10.4.5"],\
           ["lru-cache", "npm:10.4.3"],\
@@ -1030,12 +1033,12 @@ const RAW_RUNTIME_STATE =
       ["npm:11.0.3", {\
         "packageLocation": "./.yarn/cache/chevrotain-npm-11.0.3-0664cabc35-ffd425fa32.zip/node_modules/chevrotain/",\
         "packageDependencies": [\
-          ["chevrotain", "npm:11.0.3"],\
           ["@chevrotain/cst-dts-gen", "npm:11.0.3"],\
           ["@chevrotain/gast", "npm:11.0.3"],\
           ["@chevrotain/regexp-to-ast", "npm:11.0.3"],\
           ["@chevrotain/types", "npm:11.0.3"],\
           ["@chevrotain/utils", "npm:11.0.3"],\
+          ["chevrotain", "npm:11.0.3"],\
           ["lodash-es", "npm:4.17.21"]\
         ],\
         "linkType": "HARD"\
@@ -1094,11 +1097,12 @@ const RAW_RUNTIME_STATE =
       ["workspace:.", {\
         "packageLocation": "./",\
         "packageDependencies": [\
-          ["cueter", "workspace:."],\
           ["@tailwindcss/vite", "virtual:a35bc4893f75456b5a55624df4958ea6fcc0893d722f009f45f2f76ed7f1c7ea2a2cf7206e363da752b44213270cb4c0cd5b1ed3cbd274a27949a7684e74947b#npm:4.0.14"],\
           ["@types/luxon", "npm:3.4.2"],\
           ["@vitejs/plugin-vue", "virtual:a35bc4893f75456b5a55624df4958ea6fcc0893d722f009f45f2f76ed7f1c7ea2a2cf7206e363da752b44213270cb4c0cd5b1ed3cbd274a27949a7684e74947b#npm:5.2.3"],\
           ["chevrotain", "npm:11.0.3"],\
+          ["cueter", "workspace:."],\
+          ["fast-xml-parser", "npm:5.2.5"],\
           ["postcss", "npm:8.5.3"],\
           ["rimraf", "npm:6.0.1"],\
           ["tailwindcss", "npm:4.0.14"],\
@@ -1122,8 +1126,8 @@ const RAW_RUNTIME_STATE =
       ["virtual:643ed7cc338bcf145a82d8b05b3bef6bcf150ca545df386225596f10ce53cc90b88b3ca83e348ade1ccea5f3f8e76c92d2f0e2ba544da60d40aff9921c56872d#npm:4.4.0", {\
         "packageLocation": "./.yarn/__virtual__/debug-virtual-245766b4e7/0/cache/debug-npm-4.4.0-f6efe76023-db94f1a182.zip/node_modules/debug/",\
         "packageDependencies": [\
-          ["debug", "virtual:643ed7cc338bcf145a82d8b05b3bef6bcf150ca545df386225596f10ce53cc90b88b3ca83e348ade1ccea5f3f8e76c92d2f0e2ba544da60d40aff9921c56872d#npm:4.4.0"],\
           ["@types/supports-color", null],\
+          ["debug", "virtual:643ed7cc338bcf145a82d8b05b3bef6bcf150ca545df386225596f10ce53cc90b88b3ca83e348ade1ccea5f3f8e76c92d2f0e2ba544da60d40aff9921c56872d#npm:4.4.0"],\
           ["ms", "npm:2.1.3"],\
           ["supports-color", null]\
         ],\
@@ -1220,7 +1224,6 @@ const RAW_RUNTIME_STATE =
       ["npm:0.25.1", {\
         "packageLocation": "./.yarn/unplugged/esbuild-npm-0.25.1-d9214fa98d/node_modules/esbuild/",\
         "packageDependencies": [\
-          ["esbuild", "npm:0.25.1"],\
           ["@esbuild/aix-ppc64", "npm:0.25.1"],\
           ["@esbuild/android-arm", "npm:0.25.1"],\
           ["@esbuild/android-arm64", "npm:0.25.1"],\
@@ -1245,7 +1248,8 @@ const RAW_RUNTIME_STATE =
           ["@esbuild/sunos-x64", "npm:0.25.1"],\
           ["@esbuild/win32-arm64", "npm:0.25.1"],\
           ["@esbuild/win32-ia32", "npm:0.25.1"],\
-          ["@esbuild/win32-x64", "npm:0.25.1"]\
+          ["@esbuild/win32-x64", "npm:0.25.1"],\
+          ["esbuild", "npm:0.25.1"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -1268,12 +1272,22 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["fast-xml-parser", [\
+      ["npm:5.2.5", {\
+        "packageLocation": "./.yarn/cache/fast-xml-parser-npm-5.2.5-4fd49da1b5-d1057d2e79.zip/node_modules/fast-xml-parser/",\
+        "packageDependencies": [\
+          ["fast-xml-parser", "npm:5.2.5"],\
+          ["strnum", "npm:2.1.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["foreground-child", [\
       ["npm:3.3.1", {\
         "packageLocation": "./.yarn/cache/foreground-child-npm-3.3.1-b7775fda04-8986e4af24.zip/node_modules/foreground-child/",\
         "packageDependencies": [\
-          ["foreground-child", "npm:3.3.1"],\
           ["cross-spawn", "npm:7.0.6"],\
+          ["foreground-child", "npm:3.3.1"],\
           ["signal-exit", "npm:4.1.0"]\
         ],\
         "linkType": "HARD"\
@@ -1303,8 +1317,8 @@ const RAW_RUNTIME_STATE =
       ["npm:10.4.5", {\
         "packageLocation": "./.yarn/cache/glob-npm-10.4.5-8c63175f05-19a9759ea7.zip/node_modules/glob/",\
         "packageDependencies": [\
-          ["glob", "npm:10.4.5"],\
           ["foreground-child", "npm:3.3.1"],\
+          ["glob", "npm:10.4.5"],\
           ["jackspeak", "npm:3.4.3"],\
           ["minimatch", "npm:9.0.5"],\
           ["minipass", "npm:7.1.2"],\
@@ -1316,8 +1330,8 @@ const RAW_RUNTIME_STATE =
       ["npm:11.0.1", {\
         "packageLocation": "./.yarn/cache/glob-npm-11.0.1-2249503635-2b32588be5.zip/node_modules/glob/",\
         "packageDependencies": [\
-          ["glob", "npm:11.0.1"],\
           ["foreground-child", "npm:3.3.1"],\
+          ["glob", "npm:11.0.1"],\
           ["jackspeak", "npm:4.1.0"],\
           ["minimatch", "npm:10.0.1"],\
           ["minipass", "npm:7.1.2"],\
@@ -1349,9 +1363,9 @@ const RAW_RUNTIME_STATE =
       ["npm:7.0.2", {\
         "packageLocation": "./.yarn/cache/http-proxy-agent-npm-7.0.2-643ed7cc33-4207b06a45.zip/node_modules/http-proxy-agent/",\
         "packageDependencies": [\
-          ["http-proxy-agent", "npm:7.0.2"],\
           ["agent-base", "npm:7.1.3"],\
-          ["debug", "virtual:643ed7cc338bcf145a82d8b05b3bef6bcf150ca545df386225596f10ce53cc90b88b3ca83e348ade1ccea5f3f8e76c92d2f0e2ba544da60d40aff9921c56872d#npm:4.4.0"]\
+          ["debug", "virtual:643ed7cc338bcf145a82d8b05b3bef6bcf150ca545df386225596f10ce53cc90b88b3ca83e348ade1ccea5f3f8e76c92d2f0e2ba544da60d40aff9921c56872d#npm:4.4.0"],\
+          ["http-proxy-agent", "npm:7.0.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -1360,9 +1374,9 @@ const RAW_RUNTIME_STATE =
       ["npm:7.0.6", {\
         "packageLocation": "./.yarn/cache/https-proxy-agent-npm-7.0.6-27a95c2690-f729219bc7.zip/node_modules/https-proxy-agent/",\
         "packageDependencies": [\
-          ["https-proxy-agent", "npm:7.0.6"],\
           ["agent-base", "npm:7.1.3"],\
-          ["debug", "virtual:643ed7cc338bcf145a82d8b05b3bef6bcf150ca545df386225596f10ce53cc90b88b3ca83e348ade1ccea5f3f8e76c92d2f0e2ba544da60d40aff9921c56872d#npm:4.4.0"]\
+          ["debug", "virtual:643ed7cc338bcf145a82d8b05b3bef6bcf150ca545df386225596f10ce53cc90b88b3ca83e348ade1ccea5f3f8e76c92d2f0e2ba544da60d40aff9921c56872d#npm:4.4.0"],\
+          ["https-proxy-agent", "npm:7.0.6"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -1426,17 +1440,17 @@ const RAW_RUNTIME_STATE =
       ["npm:3.4.3", {\
         "packageLocation": "./.yarn/cache/jackspeak-npm-3.4.3-546bfad080-6acc10d139.zip/node_modules/jackspeak/",\
         "packageDependencies": [\
-          ["jackspeak", "npm:3.4.3"],\
           ["@isaacs/cliui", "npm:8.0.2"],\
-          ["@pkgjs/parseargs", "npm:0.11.0"]\
+          ["@pkgjs/parseargs", "npm:0.11.0"],\
+          ["jackspeak", "npm:3.4.3"]\
         ],\
         "linkType": "HARD"\
       }],\
       ["npm:4.1.0", {\
         "packageLocation": "./.yarn/cache/jackspeak-npm-4.1.0-8f220eaf6d-08a6a24a36.zip/node_modules/jackspeak/",\
         "packageDependencies": [\
-          ["jackspeak", "npm:4.1.0"],\
-          ["@isaacs/cliui", "npm:8.0.2"]\
+          ["@isaacs/cliui", "npm:8.0.2"],\
+          ["jackspeak", "npm:4.1.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -1463,8 +1477,8 @@ const RAW_RUNTIME_STATE =
       ["npm:1.29.2", {\
         "packageLocation": "./.yarn/cache/lightningcss-npm-1.29.2-4b952c455e-e06bb99c98.zip/node_modules/lightningcss/",\
         "packageDependencies": [\
-          ["lightningcss", "npm:1.29.2"],\
           ["detect-libc", "npm:2.0.3"],\
+          ["lightningcss", "npm:1.29.2"],\
           ["lightningcss-darwin-arm64", "npm:1.29.2"],\
           ["lightningcss-darwin-x64", "npm:1.29.2"],\
           ["lightningcss-freebsd-x64", "npm:1.29.2"],\
@@ -1598,8 +1612,8 @@ const RAW_RUNTIME_STATE =
       ["npm:0.30.17", {\
         "packageLocation": "./.yarn/cache/magic-string-npm-0.30.17-da1b7593b1-16826e415d.zip/node_modules/magic-string/",\
         "packageDependencies": [\
-          ["magic-string", "npm:0.30.17"],\
-          ["@jridgewell/sourcemap-codec", "npm:1.5.0"]\
+          ["@jridgewell/sourcemap-codec", "npm:1.5.0"],\
+          ["magic-string", "npm:0.30.17"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -1608,10 +1622,10 @@ const RAW_RUNTIME_STATE =
       ["npm:14.0.3", {\
         "packageLocation": "./.yarn/cache/make-fetch-happen-npm-14.0.3-23b30e8691-c40efb5e52.zip/node_modules/make-fetch-happen/",\
         "packageDependencies": [\
-          ["make-fetch-happen", "npm:14.0.3"],\
           ["@npmcli/agent", "npm:3.0.0"],\
           ["cacache", "npm:19.0.1"],\
           ["http-cache-semantics", "npm:4.1.1"],\
+          ["make-fetch-happen", "npm:14.0.3"],\
           ["minipass", "npm:7.1.2"],\
           ["minipass-fetch", "npm:4.0.1"],\
           ["minipass-flush", "npm:1.0.5"],\
@@ -1628,16 +1642,16 @@ const RAW_RUNTIME_STATE =
       ["npm:10.0.1", {\
         "packageLocation": "./.yarn/cache/minimatch-npm-10.0.1-eabcc0d3a0-e6c29a81fe.zip/node_modules/minimatch/",\
         "packageDependencies": [\
-          ["minimatch", "npm:10.0.1"],\
-          ["brace-expansion", "npm:2.0.1"]\
+          ["brace-expansion", "npm:2.0.1"],\
+          ["minimatch", "npm:10.0.1"]\
         ],\
         "linkType": "HARD"\
       }],\
       ["npm:9.0.5", {\
         "packageLocation": "./.yarn/cache/minimatch-npm-9.0.5-9aa93d97fa-de96cf5e35.zip/node_modules/minimatch/",\
         "packageDependencies": [\
-          ["minimatch", "npm:9.0.5"],\
-          ["brace-expansion", "npm:2.0.1"]\
+          ["brace-expansion", "npm:2.0.1"],\
+          ["minimatch", "npm:9.0.5"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -1663,8 +1677,8 @@ const RAW_RUNTIME_STATE =
       ["npm:2.0.1", {\
         "packageLocation": "./.yarn/cache/minipass-collect-npm-2.0.1-73d3907e40-5167e73f62.zip/node_modules/minipass-collect/",\
         "packageDependencies": [\
-          ["minipass-collect", "npm:2.0.1"],\
-          ["minipass", "npm:7.1.2"]\
+          ["minipass", "npm:7.1.2"],\
+          ["minipass-collect", "npm:2.0.1"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -1673,9 +1687,9 @@ const RAW_RUNTIME_STATE =
       ["npm:4.0.1", {\
         "packageLocation": "./.yarn/cache/minipass-fetch-npm-4.0.1-ce1d15e957-a3147b2efe.zip/node_modules/minipass-fetch/",\
         "packageDependencies": [\
-          ["minipass-fetch", "npm:4.0.1"],\
           ["encoding", "npm:0.1.13"],\
           ["minipass", "npm:7.1.2"],\
+          ["minipass-fetch", "npm:4.0.1"],\
           ["minipass-sized", "npm:1.0.3"],\
           ["minizlib", "npm:3.0.1"]\
         ],\
@@ -1686,8 +1700,8 @@ const RAW_RUNTIME_STATE =
       ["npm:1.0.5", {\
         "packageLocation": "./.yarn/cache/minipass-flush-npm-1.0.5-efe79d9826-2a51b63feb.zip/node_modules/minipass-flush/",\
         "packageDependencies": [\
-          ["minipass-flush", "npm:1.0.5"],\
-          ["minipass", "npm:3.3.6"]\
+          ["minipass", "npm:3.3.6"],\
+          ["minipass-flush", "npm:1.0.5"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -1696,8 +1710,8 @@ const RAW_RUNTIME_STATE =
       ["npm:1.2.4", {\
         "packageLocation": "./.yarn/cache/minipass-pipeline-npm-1.2.4-5924cb077f-cbda57cea2.zip/node_modules/minipass-pipeline/",\
         "packageDependencies": [\
-          ["minipass-pipeline", "npm:1.2.4"],\
-          ["minipass", "npm:3.3.6"]\
+          ["minipass", "npm:3.3.6"],\
+          ["minipass-pipeline", "npm:1.2.4"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -1706,8 +1720,8 @@ const RAW_RUNTIME_STATE =
       ["npm:1.0.3", {\
         "packageLocation": "./.yarn/cache/minipass-sized-npm-1.0.3-306d86f432-298f124753.zip/node_modules/minipass-sized/",\
         "packageDependencies": [\
-          ["minipass-sized", "npm:1.0.3"],\
-          ["minipass", "npm:3.3.6"]\
+          ["minipass", "npm:3.3.6"],\
+          ["minipass-sized", "npm:1.0.3"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -1716,8 +1730,8 @@ const RAW_RUNTIME_STATE =
       ["npm:3.0.1", {\
         "packageLocation": "./.yarn/cache/minizlib-npm-3.0.1-4bdabd978f-82f8bf70da.zip/node_modules/minizlib/",\
         "packageDependencies": [\
-          ["minizlib", "npm:3.0.1"],\
           ["minipass", "npm:7.1.2"],\
+          ["minizlib", "npm:3.0.1"],\
           ["rimraf", "npm:5.0.10"]\
         ],\
         "linkType": "HARD"\
@@ -1763,12 +1777,12 @@ const RAW_RUNTIME_STATE =
       ["npm:11.1.0", {\
         "packageLocation": "./.yarn/unplugged/node-gyp-npm-11.1.0-bd7044e197/node_modules/node-gyp/",\
         "packageDependencies": [\
-          ["node-gyp", "npm:11.1.0"],\
           ["env-paths", "npm:2.2.1"],\
           ["exponential-backoff", "npm:3.1.2"],\
           ["glob", "npm:10.4.5"],\
           ["graceful-fs", "npm:4.2.11"],\
           ["make-fetch-happen", "npm:14.0.3"],\
+          ["node-gyp", "npm:11.1.0"],\
           ["nopt", "npm:8.1.0"],\
           ["proc-log", "npm:5.0.0"],\
           ["semver", "npm:7.7.1"],\
@@ -1782,8 +1796,8 @@ const RAW_RUNTIME_STATE =
       ["npm:8.1.0", {\
         "packageLocation": "./.yarn/cache/nopt-npm-8.1.0-5570ef63cd-62e9ea70c7.zip/node_modules/nopt/",\
         "packageDependencies": [\
-          ["nopt", "npm:8.1.0"],\
-          ["abbrev", "npm:3.0.0"]\
+          ["abbrev", "npm:3.0.0"],\
+          ["nopt", "npm:8.1.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -1819,18 +1833,18 @@ const RAW_RUNTIME_STATE =
       ["npm:1.11.1", {\
         "packageLocation": "./.yarn/cache/path-scurry-npm-1.11.1-aaf8c339af-32a13711a2.zip/node_modules/path-scurry/",\
         "packageDependencies": [\
-          ["path-scurry", "npm:1.11.1"],\
           ["lru-cache", "npm:10.4.3"],\
-          ["minipass", "npm:7.1.2"]\
+          ["minipass", "npm:7.1.2"],\
+          ["path-scurry", "npm:1.11.1"]\
         ],\
         "linkType": "HARD"\
       }],\
       ["npm:2.0.0", {\
         "packageLocation": "./.yarn/cache/path-scurry-npm-2.0.0-5a556e8161-3da4adedaa.zip/node_modules/path-scurry/",\
         "packageDependencies": [\
-          ["path-scurry", "npm:2.0.0"],\
           ["lru-cache", "npm:11.0.2"],\
-          ["minipass", "npm:7.1.2"]\
+          ["minipass", "npm:7.1.2"],\
+          ["path-scurry", "npm:2.0.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -1848,9 +1862,9 @@ const RAW_RUNTIME_STATE =
       ["npm:8.5.3", {\
         "packageLocation": "./.yarn/cache/postcss-npm-8.5.3-37174aa03d-b75510d7b2.zip/node_modules/postcss/",\
         "packageDependencies": [\
-          ["postcss", "npm:8.5.3"],\
           ["nanoid", "npm:3.3.10"],\
           ["picocolors", "npm:1.1.1"],\
+          ["postcss", "npm:8.5.3"],\
           ["source-map-js", "npm:1.2.1"]\
         ],\
         "linkType": "HARD"\
@@ -1869,8 +1883,8 @@ const RAW_RUNTIME_STATE =
       ["npm:2.0.1", {\
         "packageLocation": "./.yarn/cache/promise-retry-npm-2.0.1-871f0b01b7-9c7045a1a2.zip/node_modules/promise-retry/",\
         "packageDependencies": [\
-          ["promise-retry", "npm:2.0.1"],\
           ["err-code", "npm:2.0.3"],\
+          ["promise-retry", "npm:2.0.1"],\
           ["retry", "npm:0.12.0"]\
         ],\
         "linkType": "HARD"\
@@ -1889,17 +1903,17 @@ const RAW_RUNTIME_STATE =
       ["npm:5.0.10", {\
         "packageLocation": "./.yarn/cache/rimraf-npm-5.0.10-d0c6647697-7da4fd0e15.zip/node_modules/rimraf/",\
         "packageDependencies": [\
-          ["rimraf", "npm:5.0.10"],\
-          ["glob", "npm:10.4.5"]\
+          ["glob", "npm:10.4.5"],\
+          ["rimraf", "npm:5.0.10"]\
         ],\
         "linkType": "HARD"\
       }],\
       ["npm:6.0.1", {\
         "packageLocation": "./.yarn/cache/rimraf-npm-6.0.1-2d0b0aeb1b-b30b6b0727.zip/node_modules/rimraf/",\
         "packageDependencies": [\
-          ["rimraf", "npm:6.0.1"],\
           ["glob", "npm:11.0.1"],\
-          ["package-json-from-dist", "npm:1.0.1"]\
+          ["package-json-from-dist", "npm:1.0.1"],\
+          ["rimraf", "npm:6.0.1"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -1908,7 +1922,6 @@ const RAW_RUNTIME_STATE =
       ["npm:4.36.0", {\
         "packageLocation": "./.yarn/cache/rollup-npm-4.36.0-2ccd78e376-52ad34ba18.zip/node_modules/rollup/",\
         "packageDependencies": [\
-          ["rollup", "npm:4.36.0"],\
           ["@rollup/rollup-android-arm-eabi", "npm:4.36.0"],\
           ["@rollup/rollup-android-arm64", "npm:4.36.0"],\
           ["@rollup/rollup-darwin-arm64", "npm:4.36.0"],\
@@ -1929,7 +1942,8 @@ const RAW_RUNTIME_STATE =
           ["@rollup/rollup-win32-ia32-msvc", "npm:4.36.0"],\
           ["@rollup/rollup-win32-x64-msvc", "npm:4.36.0"],\
           ["@types/estree", "npm:1.0.6"],\
-          ["fsevents", "patch:fsevents@npm%3A2.3.3#optional!builtin<compat/fsevents>::version=2.3.3&hash=df0bf1"]\
+          ["fsevents", "patch:fsevents@npm%3A2.3.3#optional!builtin<compat/fsevents>::version=2.3.3&hash=df0bf1"],\
+          ["rollup", "npm:4.36.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -1993,9 +2007,9 @@ const RAW_RUNTIME_STATE =
       ["npm:2.8.4", {\
         "packageLocation": "./.yarn/cache/socks-npm-2.8.4-8194b86bd0-00c3271e23.zip/node_modules/socks/",\
         "packageDependencies": [\
-          ["socks", "npm:2.8.4"],\
           ["ip-address", "npm:9.0.5"],\
-          ["smart-buffer", "npm:4.2.0"]\
+          ["smart-buffer", "npm:4.2.0"],\
+          ["socks", "npm:2.8.4"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -2004,10 +2018,10 @@ const RAW_RUNTIME_STATE =
       ["npm:8.0.5", {\
         "packageLocation": "./.yarn/cache/socks-proxy-agent-npm-8.0.5-24d77a90dc-5d2c6cecba.zip/node_modules/socks-proxy-agent/",\
         "packageDependencies": [\
-          ["socks-proxy-agent", "npm:8.0.5"],\
           ["agent-base", "npm:7.1.3"],\
           ["debug", "virtual:643ed7cc338bcf145a82d8b05b3bef6bcf150ca545df386225596f10ce53cc90b88b3ca83e348ade1ccea5f3f8e76c92d2f0e2ba544da60d40aff9921c56872d#npm:4.4.0"],\
-          ["socks", "npm:2.8.4"]\
+          ["socks", "npm:2.8.4"],\
+          ["socks-proxy-agent", "npm:8.0.5"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -2034,8 +2048,8 @@ const RAW_RUNTIME_STATE =
       ["npm:12.0.0", {\
         "packageLocation": "./.yarn/cache/ssri-npm-12.0.0-97c0e53d2e-caddd5f544.zip/node_modules/ssri/",\
         "packageDependencies": [\
-          ["ssri", "npm:12.0.0"],\
-          ["minipass", "npm:7.1.2"]\
+          ["minipass", "npm:7.1.2"],\
+          ["ssri", "npm:12.0.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -2044,9 +2058,9 @@ const RAW_RUNTIME_STATE =
       ["npm:4.2.3", {\
         "packageLocation": "./.yarn/cache/string-width-npm-4.2.3-2c27177bae-1e525e92e5.zip/node_modules/string-width/",\
         "packageDependencies": [\
-          ["string-width", "npm:4.2.3"],\
           ["emoji-regex", "npm:8.0.0"],\
           ["is-fullwidth-code-point", "npm:3.0.0"],\
+          ["string-width", "npm:4.2.3"],\
           ["strip-ansi", "npm:6.0.1"]\
         ],\
         "linkType": "HARD"\
@@ -2054,9 +2068,9 @@ const RAW_RUNTIME_STATE =
       ["npm:5.1.2", {\
         "packageLocation": "./.yarn/cache/string-width-npm-5.1.2-bf60531341-ab9c426444.zip/node_modules/string-width/",\
         "packageDependencies": [\
-          ["string-width", "npm:5.1.2"],\
           ["eastasianwidth", "npm:0.2.0"],\
           ["emoji-regex", "npm:9.2.2"],\
+          ["string-width", "npm:5.1.2"],\
           ["strip-ansi", "npm:7.1.0"]\
         ],\
         "linkType": "HARD"\
@@ -2066,16 +2080,25 @@ const RAW_RUNTIME_STATE =
       ["npm:6.0.1", {\
         "packageLocation": "./.yarn/cache/strip-ansi-npm-6.0.1-caddc7cb40-1ae5f212a1.zip/node_modules/strip-ansi/",\
         "packageDependencies": [\
-          ["strip-ansi", "npm:6.0.1"],\
-          ["ansi-regex", "npm:5.0.1"]\
+          ["ansi-regex", "npm:5.0.1"],\
+          ["strip-ansi", "npm:6.0.1"]\
         ],\
         "linkType": "HARD"\
       }],\
       ["npm:7.1.0", {\
         "packageLocation": "./.yarn/cache/strip-ansi-npm-7.1.0-7453b80b79-a198c3762e.zip/node_modules/strip-ansi/",\
         "packageDependencies": [\
-          ["strip-ansi", "npm:7.1.0"],\
-          ["ansi-regex", "npm:6.1.0"]\
+          ["ansi-regex", "npm:6.1.0"],\
+          ["strip-ansi", "npm:7.1.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["strnum", [\
+      ["npm:2.1.1", {\
+        "packageLocation": "./.yarn/cache/strnum-npm-2.1.1-2f45f2aae3-1f9bd1f9b4.zip/node_modules/strnum/",\
+        "packageDependencies": [\
+          ["strnum", "npm:2.1.1"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -2102,12 +2125,12 @@ const RAW_RUNTIME_STATE =
       ["npm:7.4.3", {\
         "packageLocation": "./.yarn/cache/tar-npm-7.4.3-1dbbd1ffc3-d4679609bb.zip/node_modules/tar/",\
         "packageDependencies": [\
-          ["tar", "npm:7.4.3"],\
           ["@isaacs/fs-minipass", "npm:4.0.1"],\
           ["chownr", "npm:3.0.0"],\
           ["minipass", "npm:7.1.2"],\
           ["minizlib", "npm:3.0.1"],\
           ["mkdirp", "npm:3.0.1"],\
+          ["tar", "npm:7.4.3"],\
           ["yallist", "npm:5.0.0"]\
         ],\
         "linkType": "HARD"\
@@ -2145,8 +2168,8 @@ const RAW_RUNTIME_STATE =
       ["npm:5.0.0", {\
         "packageLocation": "./.yarn/cache/unique-slug-npm-5.0.0-11508c0469-d324c5a448.zip/node_modules/unique-slug/",\
         "packageDependencies": [\
-          ["unique-slug", "npm:5.0.0"],\
-          ["imurmurhash", "npm:0.1.4"]\
+          ["imurmurhash", "npm:0.1.4"],\
+          ["unique-slug", "npm:5.0.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -2162,7 +2185,6 @@ const RAW_RUNTIME_STATE =
       ["virtual:a35bc4893f75456b5a55624df4958ea6fcc0893d722f009f45f2f76ed7f1c7ea2a2cf7206e363da752b44213270cb4c0cd5b1ed3cbd274a27949a7684e74947b#npm:6.2.6", {\
         "packageLocation": "./.yarn/__virtual__/vite-virtual-7c2354bac6/0/cache/vite-npm-6.2.6-19e4bde6cc-68a2ed3e61.zip/node_modules/vite/",\
         "packageDependencies": [\
-          ["vite", "virtual:a35bc4893f75456b5a55624df4958ea6fcc0893d722f009f45f2f76ed7f1c7ea2a2cf7206e363da752b44213270cb4c0cd5b1ed3cbd274a27949a7684e74947b#npm:6.2.6"],\
           ["@types/jiti", null],\
           ["@types/less", null],\
           ["@types/lightningcss", null],\
@@ -2187,6 +2209,7 @@ const RAW_RUNTIME_STATE =
           ["sugarss", null],\
           ["terser", null],\
           ["tsx", null],\
+          ["vite", "virtual:a35bc4893f75456b5a55624df4958ea6fcc0893d722f009f45f2f76ed7f1c7ea2a2cf7206e363da752b44213270cb4c0cd5b1ed3cbd274a27949a7684e74947b#npm:6.2.6"],\
           ["yaml", null]\
         ],\
         "packagePeers": [\
@@ -2226,14 +2249,14 @@ const RAW_RUNTIME_STATE =
       ["virtual:a35bc4893f75456b5a55624df4958ea6fcc0893d722f009f45f2f76ed7f1c7ea2a2cf7206e363da752b44213270cb4c0cd5b1ed3cbd274a27949a7684e74947b#npm:3.5.13", {\
         "packageLocation": "./.yarn/__virtual__/vue-virtual-aa04e4ae68/0/cache/vue-npm-3.5.13-59cb3fae80-4bbb5caf3f.zip/node_modules/vue/",\
         "packageDependencies": [\
-          ["vue", "virtual:a35bc4893f75456b5a55624df4958ea6fcc0893d722f009f45f2f76ed7f1c7ea2a2cf7206e363da752b44213270cb4c0cd5b1ed3cbd274a27949a7684e74947b#npm:3.5.13"],\
           ["@types/typescript", null],\
           ["@vue/compiler-dom", "npm:3.5.13"],\
           ["@vue/compiler-sfc", "npm:3.5.13"],\
           ["@vue/runtime-dom", "npm:3.5.13"],\
           ["@vue/server-renderer", "virtual:aa04e4ae68096a615ea2e4dcb626908ac94c21f69309d4b4b60b9d42c34c4e4161f622084c1a30dab10874ce74f70183a7d157b7838625f12fb5e3103c946d74#npm:3.5.13"],\
           ["@vue/shared", "npm:3.5.13"],\
-          ["typescript", "patch:typescript@npm%3A5.6.3#optional!builtin<compat/typescript>::version=5.6.3&hash=8c6c40"]\
+          ["typescript", "patch:typescript@npm%3A5.6.3#optional!builtin<compat/typescript>::version=5.6.3&hash=8c6c40"],\
+          ["vue", "virtual:a35bc4893f75456b5a55624df4958ea6fcc0893d722f009f45f2f76ed7f1c7ea2a2cf7206e363da752b44213270cb4c0cd5b1ed3cbd274a27949a7684e74947b#npm:3.5.13"]\
         ],\
         "packagePeers": [\
           "@types/typescript",\
@@ -2253,10 +2276,10 @@ const RAW_RUNTIME_STATE =
       ["virtual:a35bc4893f75456b5a55624df4958ea6fcc0893d722f009f45f2f76ed7f1c7ea2a2cf7206e363da752b44213270cb4c0cd5b1ed3cbd274a27949a7684e74947b#npm:4.0.2", {\
         "packageLocation": "./.yarn/__virtual__/vuex-virtual-f0dd0227be/0/cache/vuex-npm-4.0.2-809c9d1907-1e7898091b.zip/node_modules/vuex/",\
         "packageDependencies": [\
-          ["vuex", "virtual:a35bc4893f75456b5a55624df4958ea6fcc0893d722f009f45f2f76ed7f1c7ea2a2cf7206e363da752b44213270cb4c0cd5b1ed3cbd274a27949a7684e74947b#npm:4.0.2"],\
           ["@types/vue", null],\
           ["@vue/devtools-api", "npm:6.6.4"],\
-          ["vue", "virtual:a35bc4893f75456b5a55624df4958ea6fcc0893d722f009f45f2f76ed7f1c7ea2a2cf7206e363da752b44213270cb4c0cd5b1ed3cbd274a27949a7684e74947b#npm:3.5.13"]\
+          ["vue", "virtual:a35bc4893f75456b5a55624df4958ea6fcc0893d722f009f45f2f76ed7f1c7ea2a2cf7206e363da752b44213270cb4c0cd5b1ed3cbd274a27949a7684e74947b#npm:3.5.13"],\
+          ["vuex", "virtual:a35bc4893f75456b5a55624df4958ea6fcc0893d722f009f45f2f76ed7f1c7ea2a2cf7206e363da752b44213270cb4c0cd5b1ed3cbd274a27949a7684e74947b#npm:4.0.2"]\
         ],\
         "packagePeers": [\
           "@types/vue",\
@@ -2269,16 +2292,16 @@ const RAW_RUNTIME_STATE =
       ["npm:2.0.2", {\
         "packageLocation": "./.yarn/cache/which-npm-2.0.2-320ddf72f7-66522872a7.zip/node_modules/which/",\
         "packageDependencies": [\
-          ["which", "npm:2.0.2"],\
-          ["isexe", "npm:2.0.0"]\
+          ["isexe", "npm:2.0.0"],\
+          ["which", "npm:2.0.2"]\
         ],\
         "linkType": "HARD"\
       }],\
       ["npm:5.0.0", {\
         "packageLocation": "./.yarn/cache/which-npm-5.0.0-15aa39eb60-e556e4cd8b.zip/node_modules/which/",\
         "packageDependencies": [\
-          ["which", "npm:5.0.0"],\
-          ["isexe", "npm:3.1.1"]\
+          ["isexe", "npm:3.1.1"],\
+          ["which", "npm:5.0.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -2287,20 +2310,20 @@ const RAW_RUNTIME_STATE =
       ["npm:7.0.0", {\
         "packageLocation": "./.yarn/cache/wrap-ansi-npm-7.0.0-ad6e1a0554-d15fc12c11.zip/node_modules/wrap-ansi/",\
         "packageDependencies": [\
-          ["wrap-ansi", "npm:7.0.0"],\
           ["ansi-styles", "npm:4.3.0"],\
           ["string-width", "npm:4.2.3"],\
-          ["strip-ansi", "npm:6.0.1"]\
+          ["strip-ansi", "npm:6.0.1"],\
+          ["wrap-ansi", "npm:7.0.0"]\
         ],\
         "linkType": "HARD"\
       }],\
       ["npm:8.1.0", {\
         "packageLocation": "./.yarn/cache/wrap-ansi-npm-8.1.0-26a4e6ae28-138ff58a41.zip/node_modules/wrap-ansi/",\
         "packageDependencies": [\
-          ["wrap-ansi", "npm:8.1.0"],\
           ["ansi-styles", "npm:6.2.1"],\
           ["string-width", "npm:5.1.2"],\
-          ["strip-ansi", "npm:7.1.0"]\
+          ["strip-ansi", "npm:7.1.0"],\
+          ["wrap-ansi", "npm:8.1.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -3731,7 +3754,7 @@ class ProxiedFS extends FakeFS {
   watch(p, a, b) {
     return this.baseFs.watch(
       this.mapToBase(p),
-      // @ts-expect-error
+      // @ts-expect-error - reason TBS
       a,
       b
     );
@@ -3739,7 +3762,7 @@ class ProxiedFS extends FakeFS {
   watchFile(p, a, b) {
     return this.baseFs.watchFile(
       this.mapToBase(p),
-      // @ts-expect-error
+      // @ts-expect-error - reason TBS
       a,
       b
     );
@@ -4159,7 +4182,7 @@ class NodeFS extends BasePortableFakeFS {
   watch(p, a, b) {
     return this.realFs.watch(
       npath.fromPortablePath(p),
-      // @ts-expect-error
+      // @ts-expect-error - reason TBS
       a,
       b
     );
@@ -4167,7 +4190,7 @@ class NodeFS extends BasePortableFakeFS {
   watchFile(p, a, b) {
     return this.realFs.watchFile(
       npath.fromPortablePath(p),
-      // @ts-expect-error
+      // @ts-expect-error - reason TBS
       a,
       b
     );
@@ -4862,14 +4885,14 @@ class MountFS extends BasePortableFakeFS {
     return this.makeCallSync(p, () => {
       return this.baseFs.watch(
         p,
-        // @ts-expect-error
+        // @ts-expect-error - reason TBS
         a,
         b
       );
     }, (mountFs, { subPath }) => {
       return mountFs.watch(
         subPath,
-        // @ts-expect-error
+        // @ts-expect-error - reason TBS
         a,
         b
       );
@@ -4879,7 +4902,7 @@ class MountFS extends BasePortableFakeFS {
     return this.makeCallSync(p, () => {
       return this.baseFs.watchFile(
         p,
-        // @ts-expect-error
+        // @ts-expect-error - reason TBS
         a,
         b
       );
@@ -6471,14 +6494,16 @@ class ZipOpenFS extends MountFS {
       return new ZipFS(p, {
         baseFs,
         readOnly: readOnlyArchives,
-        stats: baseFs.statSync(p)
+        stats: baseFs.statSync(p),
+        customZipImplementation: opts.customZipImplementation
       });
     };
     const factoryPromise = async (baseFs, p) => {
       const zipOptions = {
         baseFs,
         readOnly: readOnlyArchives,
-        stats: await baseFs.statPromise(p)
+        stats: await baseFs.statPromise(p),
+        customZipImplementation: opts.customZipImplementation
       };
       return () => {
         return new ZipFS(p, zipOptions);
@@ -6493,6 +6518,236 @@ class ZipOpenFS extends MountFS {
   }
 }
 
+class LibzipError extends Error {
+  code;
+  constructor(message, code) {
+    super(message);
+    this.name = `Libzip Error`;
+    this.code = code;
+  }
+}
+class LibZipImpl {
+  libzip;
+  lzSource;
+  zip;
+  listings;
+  symlinkCount;
+  filesShouldBeCached = true;
+  constructor(opts) {
+    const buffer = `buffer` in opts ? opts.buffer : opts.baseFs.readFileSync(opts.path);
+    this.libzip = getInstance();
+    const errPtr = this.libzip.malloc(4);
+    try {
+      let flags = 0;
+      if (opts.readOnly)
+        flags |= this.libzip.ZIP_RDONLY;
+      const lzSource = this.allocateUnattachedSource(buffer);
+      try {
+        this.zip = this.libzip.openFromSource(lzSource, flags, errPtr);
+        this.lzSource = lzSource;
+      } catch (error) {
+        this.libzip.source.free(lzSource);
+        throw error;
+      }
+      if (this.zip === 0) {
+        const error = this.libzip.struct.errorS();
+        this.libzip.error.initWithCode(error, this.libzip.getValue(errPtr, `i32`));
+        throw this.makeLibzipError(error);
+      }
+    } finally {
+      this.libzip.free(errPtr);
+    }
+    const entryCount = this.libzip.getNumEntries(this.zip, 0);
+    const listings = new Array(entryCount);
+    for (let t = 0; t < entryCount; ++t)
+      listings[t] = this.libzip.getName(this.zip, t, 0);
+    this.listings = listings;
+    this.symlinkCount = this.libzip.ext.countSymlinks(this.zip);
+    if (this.symlinkCount === -1) {
+      throw this.makeLibzipError(this.libzip.getError(this.zip));
+    }
+  }
+  getSymlinkCount() {
+    return this.symlinkCount;
+  }
+  getListings() {
+    return this.listings;
+  }
+  stat(entry) {
+    const stat = this.libzip.struct.statS();
+    const rc = this.libzip.statIndex(this.zip, entry, 0, 0, stat);
+    if (rc === -1)
+      throw this.makeLibzipError(this.libzip.getError(this.zip));
+    const size = this.libzip.struct.statSize(stat) >>> 0;
+    const mtime = this.libzip.struct.statMtime(stat) >>> 0;
+    const crc = this.libzip.struct.statCrc(stat) >>> 0;
+    return { size, mtime, crc };
+  }
+  makeLibzipError(error) {
+    const errorCode = this.libzip.struct.errorCodeZip(error);
+    const strerror = this.libzip.error.strerror(error);
+    const libzipError = new LibzipError(strerror, this.libzip.errors[errorCode]);
+    if (errorCode === this.libzip.errors.ZIP_ER_CHANGED)
+      throw new Error(`Assertion failed: Unexpected libzip error: ${libzipError.message}`);
+    return libzipError;
+  }
+  setFileSource(target, compression, buffer) {
+    const lzSource = this.allocateSource(buffer);
+    try {
+      const newIndex = this.libzip.file.add(this.zip, target, lzSource, this.libzip.ZIP_FL_OVERWRITE);
+      if (newIndex === -1)
+        throw this.makeLibzipError(this.libzip.getError(this.zip));
+      if (compression !== null) {
+        const rc = this.libzip.file.setCompression(this.zip, newIndex, 0, compression[0], compression[1]);
+        if (rc === -1) {
+          throw this.makeLibzipError(this.libzip.getError(this.zip));
+        }
+      }
+      return newIndex;
+    } catch (error) {
+      this.libzip.source.free(lzSource);
+      throw error;
+    }
+  }
+  setMtime(entry, mtime) {
+    const rc = this.libzip.file.setMtime(this.zip, entry, 0, mtime, 0);
+    if (rc === -1) {
+      throw this.makeLibzipError(this.libzip.getError(this.zip));
+    }
+  }
+  getExternalAttributes(index) {
+    const attrs = this.libzip.file.getExternalAttributes(this.zip, index, 0, 0, this.libzip.uint08S, this.libzip.uint32S);
+    if (attrs === -1)
+      throw this.makeLibzipError(this.libzip.getError(this.zip));
+    const opsys = this.libzip.getValue(this.libzip.uint08S, `i8`) >>> 0;
+    const attributes = this.libzip.getValue(this.libzip.uint32S, `i32`) >>> 0;
+    return [opsys, attributes];
+  }
+  setExternalAttributes(index, opsys, attributes) {
+    const rc = this.libzip.file.setExternalAttributes(this.zip, index, 0, 0, opsys, attributes);
+    if (rc === -1) {
+      throw this.makeLibzipError(this.libzip.getError(this.zip));
+    }
+  }
+  locate(name) {
+    return this.libzip.name.locate(this.zip, name, 0);
+  }
+  getFileSource(index) {
+    const stat = this.libzip.struct.statS();
+    const rc = this.libzip.statIndex(this.zip, index, 0, 0, stat);
+    if (rc === -1)
+      throw this.makeLibzipError(this.libzip.getError(this.zip));
+    const size = this.libzip.struct.statCompSize(stat);
+    const compressionMethod = this.libzip.struct.statCompMethod(stat);
+    const buffer = this.libzip.malloc(size);
+    try {
+      const file = this.libzip.fopenIndex(this.zip, index, 0, this.libzip.ZIP_FL_COMPRESSED);
+      if (file === 0)
+        throw this.makeLibzipError(this.libzip.getError(this.zip));
+      try {
+        const rc2 = this.libzip.fread(file, buffer, size, 0);
+        if (rc2 === -1)
+          throw this.makeLibzipError(this.libzip.file.getError(file));
+        else if (rc2 < size)
+          throw new Error(`Incomplete read`);
+        else if (rc2 > size)
+          throw new Error(`Overread`);
+        const memory = this.libzip.HEAPU8.subarray(buffer, buffer + size);
+        const data = Buffer.from(memory);
+        return { data, compressionMethod };
+      } finally {
+        this.libzip.fclose(file);
+      }
+    } finally {
+      this.libzip.free(buffer);
+    }
+  }
+  deleteEntry(index) {
+    const rc = this.libzip.delete(this.zip, index);
+    if (rc === -1) {
+      throw this.makeLibzipError(this.libzip.getError(this.zip));
+    }
+  }
+  addDirectory(path) {
+    const index = this.libzip.dir.add(this.zip, path);
+    if (index === -1)
+      throw this.makeLibzipError(this.libzip.getError(this.zip));
+    return index;
+  }
+  getBufferAndClose() {
+    try {
+      this.libzip.source.keep(this.lzSource);
+      if (this.libzip.close(this.zip) === -1)
+        throw this.makeLibzipError(this.libzip.getError(this.zip));
+      if (this.libzip.source.open(this.lzSource) === -1)
+        throw this.makeLibzipError(this.libzip.source.error(this.lzSource));
+      if (this.libzip.source.seek(this.lzSource, 0, 0, this.libzip.SEEK_END) === -1)
+        throw this.makeLibzipError(this.libzip.source.error(this.lzSource));
+      const size = this.libzip.source.tell(this.lzSource);
+      if (size === -1)
+        throw this.makeLibzipError(this.libzip.source.error(this.lzSource));
+      if (this.libzip.source.seek(this.lzSource, 0, 0, this.libzip.SEEK_SET) === -1)
+        throw this.makeLibzipError(this.libzip.source.error(this.lzSource));
+      const buffer = this.libzip.malloc(size);
+      if (!buffer)
+        throw new Error(`Couldn't allocate enough memory`);
+      try {
+        const rc = this.libzip.source.read(this.lzSource, buffer, size);
+        if (rc === -1)
+          throw this.makeLibzipError(this.libzip.source.error(this.lzSource));
+        else if (rc < size)
+          throw new Error(`Incomplete read`);
+        else if (rc > size)
+          throw new Error(`Overread`);
+        let result = Buffer.from(this.libzip.HEAPU8.subarray(buffer, buffer + size));
+        if (process.env.YARN_IS_TEST_ENV && process.env.YARN_ZIP_DATA_EPILOGUE)
+          result = Buffer.concat([result, Buffer.from(process.env.YARN_ZIP_DATA_EPILOGUE)]);
+        return result;
+      } finally {
+        this.libzip.free(buffer);
+      }
+    } finally {
+      this.libzip.source.close(this.lzSource);
+      this.libzip.source.free(this.lzSource);
+    }
+  }
+  allocateBuffer(content) {
+    if (!Buffer.isBuffer(content))
+      content = Buffer.from(content);
+    const buffer = this.libzip.malloc(content.byteLength);
+    if (!buffer)
+      throw new Error(`Couldn't allocate enough memory`);
+    const heap = new Uint8Array(this.libzip.HEAPU8.buffer, buffer, content.byteLength);
+    heap.set(content);
+    return { buffer, byteLength: content.byteLength };
+  }
+  allocateUnattachedSource(content) {
+    const error = this.libzip.struct.errorS();
+    const { buffer, byteLength } = this.allocateBuffer(content);
+    const source = this.libzip.source.fromUnattachedBuffer(buffer, byteLength, 0, 1, error);
+    if (source === 0) {
+      this.libzip.free(error);
+      throw this.makeLibzipError(error);
+    }
+    return source;
+  }
+  allocateSource(content) {
+    const { buffer, byteLength } = this.allocateBuffer(content);
+    const source = this.libzip.source.fromBuffer(this.zip, buffer, byteLength, 0, 1);
+    if (source === 0) {
+      this.libzip.free(buffer);
+      throw this.makeLibzipError(this.libzip.getError(this.zip));
+    }
+    return source;
+  }
+  discard() {
+    this.libzip.discard(this.zip);
+  }
+}
+
+const ZIP_UNIX = 3;
+const STORE = 0;
+const DEFLATE = 8;
 const DEFAULT_COMPRESSION_LEVEL = `mixed`;
 function toUnixTimestamp(time) {
   if (typeof time === `string` && String(+time) === time)
@@ -6534,22 +6789,12 @@ function makeEmptyArchive() {
     0
   ]);
 }
-class LibzipError extends Error {
-  code;
-  constructor(message, code) {
-    super(message);
-    this.name = `Libzip Error`;
-    this.code = code;
-  }
-}
 class ZipFS extends BasePortableFakeFS {
-  libzip;
   baseFs;
   path;
   stats;
-  zip;
-  lzSource;
   level;
+  zipImpl;
   listings = /* @__PURE__ */ new Map();
   entries = /* @__PURE__ */ new Map();
   /**
@@ -6565,9 +6810,11 @@ class ZipFS extends BasePortableFakeFS {
   readOnly = false;
   constructor(source, opts = {}) {
     super();
+    if (opts.readOnly)
+      this.readOnly = true;
     const pathOptions = opts;
     this.level = typeof pathOptions.level !== `undefined` ? pathOptions.level : DEFAULT_COMPRESSION_LEVEL;
-    source ??= makeEmptyArchive();
+    const ZipImplCls = opts.customZipImplementation ?? LibZipImpl;
     if (typeof source === `string`) {
       const { baseFs = new NodeFS() } = pathOptions;
       this.baseFs = baseFs;
@@ -6593,36 +6840,19 @@ class ZipFS extends BasePortableFakeFS {
         this.stats = makeDefaultStats();
       }
     }
-    this.libzip = getInstance();
-    const errPtr = this.libzip.malloc(4);
-    try {
-      let flags = 0;
-      if (opts.readOnly) {
-        flags |= this.libzip.ZIP_RDONLY;
-        this.readOnly = true;
+    if (typeof source === `string`) {
+      if (opts.create) {
+        this.zipImpl = new ZipImplCls({ buffer: makeEmptyArchive(), readOnly: this.readOnly });
+      } else {
+        this.zipImpl = new ZipImplCls({ path: source, baseFs: this.baseFs, readOnly: this.readOnly, size: this.stats.size });
       }
-      if (typeof source === `string`)
-        source = pathOptions.create ? makeEmptyArchive() : this.baseFs.readFileSync(source);
-      const lzSource = this.allocateUnattachedSource(source);
-      try {
-        this.zip = this.libzip.openFromSource(lzSource, flags, errPtr);
-        this.lzSource = lzSource;
-      } catch (error) {
-        this.libzip.source.free(lzSource);
-        throw error;
-      }
-      if (this.zip === 0) {
-        const error = this.libzip.struct.errorS();
-        this.libzip.error.initWithCode(error, this.libzip.getValue(errPtr, `i32`));
-        throw this.makeLibzipError(error);
-      }
-    } finally {
-      this.libzip.free(errPtr);
+    } else {
+      this.zipImpl = new ZipImplCls({ buffer: source ?? makeEmptyArchive(), readOnly: this.readOnly });
     }
     this.listings.set(PortablePath.root, /* @__PURE__ */ new Set());
-    const entryCount = this.libzip.getNumEntries(this.zip, 0);
-    for (let t = 0; t < entryCount; ++t) {
-      const raw = this.libzip.getName(this.zip, t, 0);
+    const listings = this.zipImpl.getListings();
+    for (let t = 0; t < listings.length; t++) {
+      const raw = listings[t];
       if (ppath.isAbsolute(raw))
         continue;
       const p = ppath.resolve(PortablePath.root, raw);
@@ -6631,18 +6861,8 @@ class ZipFS extends BasePortableFakeFS {
         this.registerListing(p);
       }
     }
-    this.symlinkCount = this.libzip.ext.countSymlinks(this.zip);
-    if (this.symlinkCount === -1)
-      throw this.makeLibzipError(this.libzip.getError(this.zip));
+    this.symlinkCount = this.zipImpl.getSymlinkCount();
     this.ready = true;
-  }
-  makeLibzipError(error) {
-    const errorCode = this.libzip.struct.errorCodeZip(error);
-    const strerror = this.libzip.error.strerror(error);
-    const libzipError = new LibzipError(strerror, this.libzip.errors[errorCode]);
-    if (errorCode === this.libzip.errors.ZIP_ER_CHANGED)
-      throw new Error(`Assertion failed: Unexpected libzip error: ${libzipError.message}`);
-    return libzipError;
   }
   getExtractHint(hints) {
     for (const fileName of this.entries.keys()) {
@@ -6673,45 +6893,14 @@ class ZipFS extends BasePortableFakeFS {
       return makeEmptyArchive();
     }
     try {
-      this.libzip.source.keep(this.lzSource);
-      if (this.libzip.close(this.zip) === -1)
-        throw this.makeLibzipError(this.libzip.getError(this.zip));
-      if (this.libzip.source.open(this.lzSource) === -1)
-        throw this.makeLibzipError(this.libzip.source.error(this.lzSource));
-      if (this.libzip.source.seek(this.lzSource, 0, 0, this.libzip.SEEK_END) === -1)
-        throw this.makeLibzipError(this.libzip.source.error(this.lzSource));
-      const size = this.libzip.source.tell(this.lzSource);
-      if (size === -1)
-        throw this.makeLibzipError(this.libzip.source.error(this.lzSource));
-      if (this.libzip.source.seek(this.lzSource, 0, 0, this.libzip.SEEK_SET) === -1)
-        throw this.makeLibzipError(this.libzip.source.error(this.lzSource));
-      const buffer = this.libzip.malloc(size);
-      if (!buffer)
-        throw new Error(`Couldn't allocate enough memory`);
-      try {
-        const rc = this.libzip.source.read(this.lzSource, buffer, size);
-        if (rc === -1)
-          throw this.makeLibzipError(this.libzip.source.error(this.lzSource));
-        else if (rc < size)
-          throw new Error(`Incomplete read`);
-        else if (rc > size)
-          throw new Error(`Overread`);
-        let result = Buffer.from(this.libzip.HEAPU8.subarray(buffer, buffer + size));
-        if (process.env.YARN_IS_TEST_ENV && process.env.YARN_ZIP_DATA_EPILOGUE)
-          result = Buffer.concat([result, Buffer.from(process.env.YARN_ZIP_DATA_EPILOGUE)]);
-        return result;
-      } finally {
-        this.libzip.free(buffer);
-      }
+      return this.zipImpl.getBufferAndClose();
     } finally {
-      this.libzip.source.close(this.lzSource);
-      this.libzip.source.free(this.lzSource);
       this.ready = false;
     }
   }
   discardAndClose() {
     this.prepareClose();
-    this.libzip.discard(this.zip);
+    this.zipImpl.discard();
     this.ready = false;
   }
   saveAndClose() {
@@ -6965,16 +7154,14 @@ class ZipFS extends BasePortableFakeFS {
   statImpl(reason, p, opts = {}) {
     const entry = this.entries.get(p);
     if (typeof entry !== `undefined`) {
-      const stat = this.libzip.struct.statS();
-      const rc = this.libzip.statIndex(this.zip, entry, 0, 0, stat);
-      if (rc === -1)
-        throw this.makeLibzipError(this.libzip.getError(this.zip));
+      const stat = this.zipImpl.stat(entry);
+      const crc = stat.crc;
+      const size = stat.size;
+      const mtimeMs = stat.mtime * 1e3;
       const uid = this.stats.uid;
       const gid = this.stats.gid;
-      const size = this.libzip.struct.statSize(stat) >>> 0;
       const blksize = 512;
-      const blocks = Math.ceil(size / blksize);
-      const mtimeMs = (this.libzip.struct.statMtime(stat) >>> 0) * 1e3;
+      const blocks = Math.ceil(stat.size / blksize);
       const atimeMs = mtimeMs;
       const birthtimeMs = mtimeMs;
       const ctimeMs = mtimeMs;
@@ -6985,7 +7172,6 @@ class ZipFS extends BasePortableFakeFS {
       const type = this.listings.has(p) ? fs.constants.S_IFDIR : this.isSymbolicLink(entry) ? fs.constants.S_IFLNK : fs.constants.S_IFREG;
       const defaultMode = type === fs.constants.S_IFDIR ? 493 : 420;
       const mode = type | this.getUnixMode(entry, defaultMode) & 511;
-      const crc = this.libzip.struct.statCrc(stat);
       const statInstance = Object.assign(new StatEntry(), { uid, gid, size, blksize, blocks, atime, birthtime, ctime, mtime, atimeMs, birthtimeMs, ctimeMs, mtimeMs, mode, crc });
       return opts.bigint === true ? convertToBigIntStats(statInstance) : statInstance;
     }
@@ -7011,13 +7197,10 @@ class ZipFS extends BasePortableFakeFS {
     throw new Error(`Unreachable`);
   }
   getUnixMode(index, defaultMode) {
-    const rc = this.libzip.file.getExternalAttributes(this.zip, index, 0, 0, this.libzip.uint08S, this.libzip.uint32S);
-    if (rc === -1)
-      throw this.makeLibzipError(this.libzip.getError(this.zip));
-    const opsys = this.libzip.getValue(this.libzip.uint08S, `i8`) >>> 0;
-    if (opsys !== this.libzip.ZIP_OPSYS_UNIX)
+    const [opsys, attributes] = this.zipImpl.getExternalAttributes(index);
+    if (opsys !== ZIP_UNIX)
       return defaultMode;
-    return this.libzip.getValue(this.libzip.uint32S, `i32`) >>> 16;
+    return attributes >>> 16;
   }
   registerListing(p) {
     const existingListing = this.listings.get(p);
@@ -7052,10 +7235,7 @@ class ZipFS extends BasePortableFakeFS {
   }
   deleteEntry(p, index) {
     this.unregisterEntry(p);
-    const rc = this.libzip.delete(this.zip, index);
-    if (rc === -1) {
-      throw this.makeLibzipError(this.libzip.getError(this.zip));
-    }
+    this.zipImpl.deleteEntry(index);
   }
   resolveFilename(reason, p, resolveLastComponent = true, throwIfNoEntry = true) {
     if (!this.ready)
@@ -7088,7 +7268,7 @@ class ZipFS extends BasePortableFakeFS {
       resolvedP = ppath.resolve(parentP, ppath.basename(resolvedP));
       if (!resolveLastComponent || this.symlinkCount === 0)
         break;
-      const index = this.libzip.name.locate(this.zip, resolvedP.slice(1), 0);
+      const index = this.zipImpl.locate(resolvedP.slice(1));
       if (index === -1)
         break;
       if (this.isSymbolicLink(index)) {
@@ -7100,118 +7280,57 @@ class ZipFS extends BasePortableFakeFS {
     }
     return resolvedP;
   }
-  allocateBuffer(content) {
-    if (!Buffer.isBuffer(content))
-      content = Buffer.from(content);
-    const buffer = this.libzip.malloc(content.byteLength);
-    if (!buffer)
-      throw new Error(`Couldn't allocate enough memory`);
-    const heap = new Uint8Array(this.libzip.HEAPU8.buffer, buffer, content.byteLength);
-    heap.set(content);
-    return { buffer, byteLength: content.byteLength };
-  }
-  allocateUnattachedSource(content) {
-    const error = this.libzip.struct.errorS();
-    const { buffer, byteLength } = this.allocateBuffer(content);
-    const source = this.libzip.source.fromUnattachedBuffer(buffer, byteLength, 0, 1, error);
-    if (source === 0) {
-      this.libzip.free(error);
-      throw this.makeLibzipError(error);
-    }
-    return source;
-  }
-  allocateSource(content) {
-    const { buffer, byteLength } = this.allocateBuffer(content);
-    const source = this.libzip.source.fromBuffer(this.zip, buffer, byteLength, 0, 1);
-    if (source === 0) {
-      this.libzip.free(buffer);
-      throw this.makeLibzipError(this.libzip.getError(this.zip));
-    }
-    return source;
-  }
   setFileSource(p, content) {
     const buffer = Buffer.isBuffer(content) ? content : Buffer.from(content);
     const target = ppath.relative(PortablePath.root, p);
-    const lzSource = this.allocateSource(content);
-    try {
-      const newIndex = this.libzip.file.add(this.zip, target, lzSource, this.libzip.ZIP_FL_OVERWRITE);
-      if (newIndex === -1)
-        throw this.makeLibzipError(this.libzip.getError(this.zip));
-      if (this.level !== `mixed`) {
-        const method = this.level === 0 ? this.libzip.ZIP_CM_STORE : this.libzip.ZIP_CM_DEFLATE;
-        const rc = this.libzip.file.setCompression(this.zip, newIndex, 0, method, this.level);
-        if (rc === -1) {
-          throw this.makeLibzipError(this.libzip.getError(this.zip));
-        }
-      }
-      this.fileSources.set(newIndex, buffer);
-      return newIndex;
-    } catch (error) {
-      this.libzip.source.free(lzSource);
-      throw error;
+    let compression = null;
+    if (this.level !== `mixed`) {
+      const method = this.level === 0 ? STORE : DEFLATE;
+      compression = [method, this.level];
     }
+    const newIndex = this.zipImpl.setFileSource(target, compression, buffer);
+    this.fileSources.set(newIndex, buffer);
+    return newIndex;
   }
   isSymbolicLink(index) {
     if (this.symlinkCount === 0)
       return false;
-    const attrs = this.libzip.file.getExternalAttributes(this.zip, index, 0, 0, this.libzip.uint08S, this.libzip.uint32S);
-    if (attrs === -1)
-      throw this.makeLibzipError(this.libzip.getError(this.zip));
-    const opsys = this.libzip.getValue(this.libzip.uint08S, `i8`) >>> 0;
-    if (opsys !== this.libzip.ZIP_OPSYS_UNIX)
+    const [opsys, attrs] = this.zipImpl.getExternalAttributes(index);
+    if (opsys !== ZIP_UNIX)
       return false;
-    const attributes = this.libzip.getValue(this.libzip.uint32S, `i32`) >>> 16;
+    const attributes = attrs >>> 16;
     return (attributes & fs.constants.S_IFMT) === fs.constants.S_IFLNK;
   }
   getFileSource(index, opts = { asyncDecompress: false }) {
     const cachedFileSource = this.fileSources.get(index);
     if (typeof cachedFileSource !== `undefined`)
       return cachedFileSource;
-    const stat = this.libzip.struct.statS();
-    const rc = this.libzip.statIndex(this.zip, index, 0, 0, stat);
-    if (rc === -1)
-      throw this.makeLibzipError(this.libzip.getError(this.zip));
-    const size = this.libzip.struct.statCompSize(stat);
-    const compressionMethod = this.libzip.struct.statCompMethod(stat);
-    const buffer = this.libzip.malloc(size);
-    try {
-      const file = this.libzip.fopenIndex(this.zip, index, 0, this.libzip.ZIP_FL_COMPRESSED);
-      if (file === 0)
-        throw this.makeLibzipError(this.libzip.getError(this.zip));
-      try {
-        const rc2 = this.libzip.fread(file, buffer, size, 0);
-        if (rc2 === -1)
-          throw this.makeLibzipError(this.libzip.file.getError(file));
-        else if (rc2 < size)
-          throw new Error(`Incomplete read`);
-        else if (rc2 > size)
-          throw new Error(`Overread`);
-        const memory = this.libzip.HEAPU8.subarray(buffer, buffer + size);
-        const data = Buffer.from(memory);
-        if (compressionMethod === 0) {
-          this.fileSources.set(index, data);
-          return data;
-        } else if (opts.asyncDecompress) {
-          return new Promise((resolve, reject) => {
-            zlib__default.default.inflateRaw(data, (error, result) => {
-              if (error) {
-                reject(error);
-              } else {
+    const { data, compressionMethod } = this.zipImpl.getFileSource(index);
+    if (compressionMethod === STORE) {
+      if (this.zipImpl.filesShouldBeCached)
+        this.fileSources.set(index, data);
+      return data;
+    } else if (compressionMethod === DEFLATE) {
+      if (opts.asyncDecompress) {
+        return new Promise((resolve, reject) => {
+          zlib__default.default.inflateRaw(data, (error, result) => {
+            if (error) {
+              reject(error);
+            } else {
+              if (this.zipImpl.filesShouldBeCached)
                 this.fileSources.set(index, result);
-                resolve(result);
-              }
-            });
+              resolve(result);
+            }
           });
-        } else {
-          const decompressedData = zlib__default.default.inflateRawSync(data);
+        });
+      } else {
+        const decompressedData = zlib__default.default.inflateRawSync(data);
+        if (this.zipImpl.filesShouldBeCached)
           this.fileSources.set(index, decompressedData);
-          return decompressedData;
-        }
-      } finally {
-        this.libzip.fclose(file);
+        return decompressedData;
       }
-    } finally {
-      this.libzip.free(buffer);
+    } else {
+      throw new Error(`Unsupported compression method: ${compressionMethod}`);
     }
   }
   async fchmodPromise(fd, mask) {
@@ -7233,10 +7352,7 @@ class ZipFS extends BasePortableFakeFS {
       throw new Error(`Assertion failed: The entry should have been registered (${resolvedP})`);
     const oldMod = this.getUnixMode(entry, fs.constants.S_IFREG | 0);
     const newMod = oldMod & ~511 | mask;
-    const rc = this.libzip.file.setExternalAttributes(this.zip, entry, 0, 0, this.libzip.ZIP_OPSYS_UNIX, newMod << 16);
-    if (rc === -1) {
-      throw this.makeLibzipError(this.libzip.getError(this.zip));
-    }
+    this.zipImpl.setExternalAttributes(entry, ZIP_UNIX, newMod << 16);
   }
   async fchownPromise(fd, uid, gid) {
     return this.chownPromise(this.fdToPath(fd, `fchown`), uid, gid);
@@ -7410,10 +7526,7 @@ class ZipFS extends BasePortableFakeFS {
     const entry = this.entries.get(resolvedP);
     if (entry === void 0)
       throw new Error(`Unreachable`);
-    const rc = this.libzip.file.setMtime(this.zip, entry, 0, toUnixTimestamp(mtime), 0);
-    if (rc === -1) {
-      throw this.makeLibzipError(this.libzip.getError(this.zip));
-    }
+    this.zipImpl.setMtime(entry, toUnixTimestamp(mtime));
   }
   async mkdirPromise(p, opts) {
     return this.mkdirSync(p, opts);
@@ -7473,9 +7586,7 @@ class ZipFS extends BasePortableFakeFS {
     this.deleteEntry(p, index);
   }
   hydrateDirectory(resolvedP) {
-    const index = this.libzip.dir.add(this.zip, ppath.relative(PortablePath.root, resolvedP));
-    if (index === -1)
-      throw this.makeLibzipError(this.libzip.getError(this.zip));
+    const index = this.zipImpl.addDirectory(ppath.relative(PortablePath.root, resolvedP));
     this.registerListing(resolvedP);
     this.registerEntry(resolvedP, index);
     return index;
@@ -7499,9 +7610,7 @@ class ZipFS extends BasePortableFakeFS {
       throw EEXIST(`symlink '${target}' -> '${p}'`);
     const index = this.setFileSource(resolvedP, target);
     this.registerEntry(resolvedP, index);
-    const rc = this.libzip.file.setExternalAttributes(this.zip, index, 0, 0, this.libzip.ZIP_OPSYS_UNIX, (fs.constants.S_IFLNK | 511) << 16);
-    if (rc === -1)
-      throw this.makeLibzipError(this.libzip.getError(this.zip));
+    this.zipImpl.setExternalAttributes(index, ZIP_UNIX, (fs.constants.S_IFLNK | 511) << 16);
     this.symlinkCount += 1;
   }
   async readFilePromise(p, encoding) {
@@ -7656,10 +7765,13 @@ class ZipFS extends BasePortableFakeFS {
       } };
     const interval = setInterval(() => {
     }, 24 * 60 * 60 * 1e3);
-    return { on: () => {
-    }, close: () => {
-      clearInterval(interval);
-    } };
+    return {
+      on: () => {
+      },
+      close: () => {
+        clearInterval(interval);
+      }
+    };
   }
   watchFile(p, a, b) {
     const resolvedP = ppath.resolve(PortablePath.root, p);
@@ -7668,6 +7780,201 @@ class ZipFS extends BasePortableFakeFS {
   unwatchFile(p, cb) {
     const resolvedP = ppath.resolve(PortablePath.root, p);
     return unwatchFile(this, resolvedP, cb);
+  }
+}
+
+const SIGNATURE = {
+  CENTRAL_DIRECTORY: 33639248,
+  END_OF_CENTRAL_DIRECTORY: 101010256
+};
+const noCommentCDSize = 22;
+class JsZipImpl {
+  fd;
+  baseFs;
+  entries;
+  filesShouldBeCached = false;
+  constructor(opts) {
+    if (`buffer` in opts)
+      throw new Error(`Buffer based zip archives are not supported`);
+    if (!opts.readOnly)
+      throw new Error(`Writable zip archives are not supported`);
+    this.baseFs = opts.baseFs;
+    this.fd = this.baseFs.openSync(opts.path, `r`);
+    try {
+      this.entries = JsZipImpl.readZipSync(this.fd, this.baseFs, opts.size);
+    } catch (error) {
+      this.baseFs.closeSync(this.fd);
+      this.fd = `closed`;
+      throw error;
+    }
+  }
+  static readZipSync(fd, baseFs, fileSize) {
+    if (fileSize < noCommentCDSize)
+      throw new Error(`Invalid ZIP file: EOCD not found`);
+    let eocdOffset = -1;
+    let eocdBuffer = Buffer.alloc(noCommentCDSize);
+    baseFs.readSync(
+      fd,
+      eocdBuffer,
+      0,
+      noCommentCDSize,
+      fileSize - noCommentCDSize
+    );
+    if (eocdBuffer.readUInt32LE(0) === SIGNATURE.END_OF_CENTRAL_DIRECTORY) {
+      eocdOffset = 0;
+    } else {
+      const bufferSize = Math.min(65557, fileSize);
+      eocdBuffer = Buffer.alloc(bufferSize);
+      baseFs.readSync(
+        fd,
+        eocdBuffer,
+        0,
+        bufferSize,
+        Math.max(0, fileSize - bufferSize)
+      );
+      for (let i = eocdBuffer.length - 4; i >= 0; i--) {
+        if (eocdBuffer.readUInt32LE(i) === SIGNATURE.END_OF_CENTRAL_DIRECTORY) {
+          eocdOffset = i;
+          break;
+        }
+      }
+      if (eocdOffset === -1) {
+        throw new Error(`Not a zip archive`);
+      }
+    }
+    const totalEntries = eocdBuffer.readUInt16LE(eocdOffset + 10);
+    const centralDirSize = eocdBuffer.readUInt32LE(eocdOffset + 12);
+    const centralDirOffset = eocdBuffer.readUInt32LE(eocdOffset + 16);
+    const commentLength = eocdBuffer.readUInt16LE(eocdOffset + 20);
+    if (eocdOffset + commentLength + noCommentCDSize > eocdBuffer.length)
+      throw new Error(`Zip archive inconsistent`);
+    if (totalEntries == 65535 || centralDirSize == 4294967295 || centralDirOffset == 4294967295)
+      throw new Error(`Zip 64 is not supported`);
+    if (centralDirSize > fileSize)
+      throw new Error(`Zip archive inconsistent`);
+    if (totalEntries > centralDirSize / 46)
+      throw new Error(`Zip archive inconsistent`);
+    const cdBuffer = Buffer.alloc(centralDirSize);
+    if (baseFs.readSync(fd, cdBuffer, 0, cdBuffer.length, centralDirOffset) !== cdBuffer.length)
+      throw new Error(`Zip archive inconsistent`);
+    const entries = [];
+    let offset = 0;
+    let index = 0;
+    let sumCompressedSize = 0;
+    while (index < totalEntries) {
+      if (offset + 46 > cdBuffer.length)
+        throw new Error(`Zip archive inconsistent`);
+      if (cdBuffer.readUInt32LE(offset) !== SIGNATURE.CENTRAL_DIRECTORY)
+        throw new Error(`Zip archive inconsistent`);
+      const versionMadeBy = cdBuffer.readUInt16LE(offset + 4);
+      const os = versionMadeBy >>> 8;
+      const flags = cdBuffer.readUInt16LE(offset + 8);
+      if ((flags & 1) !== 0)
+        throw new Error(`Encrypted zip files are not supported`);
+      const compressionMethod = cdBuffer.readUInt16LE(offset + 10);
+      const crc = cdBuffer.readUInt32LE(offset + 16);
+      const nameLength = cdBuffer.readUInt16LE(offset + 28);
+      const extraLength = cdBuffer.readUInt16LE(offset + 30);
+      const commentLength2 = cdBuffer.readUInt16LE(offset + 32);
+      const localHeaderOffset = cdBuffer.readUInt32LE(offset + 42);
+      const name = cdBuffer.toString(`utf8`, offset + 46, offset + 46 + nameLength).replaceAll(`\0`, ` `);
+      if (name.includes(`\0`))
+        throw new Error(`Invalid ZIP file`);
+      const compressedSize = cdBuffer.readUInt32LE(offset + 20);
+      const externalAttributes = cdBuffer.readUInt32LE(offset + 38);
+      entries.push({
+        name,
+        os,
+        mtime: SAFE_TIME,
+        //we dont care,
+        crc,
+        compressionMethod,
+        isSymbolicLink: os === ZIP_UNIX && (externalAttributes >>> 16 & S_IFMT) === S_IFLNK,
+        size: cdBuffer.readUInt32LE(offset + 24),
+        compressedSize,
+        externalAttributes,
+        localHeaderOffset
+      });
+      sumCompressedSize += compressedSize;
+      index += 1;
+      offset += 46 + nameLength + extraLength + commentLength2;
+    }
+    if (sumCompressedSize > fileSize)
+      throw new Error(`Zip archive inconsistent`);
+    if (offset !== cdBuffer.length)
+      throw new Error(`Zip archive inconsistent`);
+    return entries;
+  }
+  getExternalAttributes(index) {
+    const entry = this.entries[index];
+    return [entry.os, entry.externalAttributes];
+  }
+  getListings() {
+    return this.entries.map((e) => e.name);
+  }
+  getSymlinkCount() {
+    let count = 0;
+    for (const entry of this.entries)
+      if (entry.isSymbolicLink)
+        count += 1;
+    return count;
+  }
+  stat(index) {
+    const entry = this.entries[index];
+    return {
+      crc: entry.crc,
+      mtime: entry.mtime,
+      size: entry.size
+    };
+  }
+  locate(name) {
+    for (let ind = 0; ind < this.entries.length; ind++)
+      if (this.entries[ind].name === name)
+        return ind;
+    return -1;
+  }
+  getFileSource(index) {
+    if (this.fd === `closed`)
+      throw new Error(`ZIP file is closed`);
+    const entry = this.entries[index];
+    const localHeaderBuf = Buffer.alloc(30);
+    this.baseFs.readSync(
+      this.fd,
+      localHeaderBuf,
+      0,
+      localHeaderBuf.length,
+      entry.localHeaderOffset
+    );
+    const nameLength = localHeaderBuf.readUInt16LE(26);
+    const extraLength = localHeaderBuf.readUInt16LE(28);
+    const buffer = Buffer.alloc(entry.compressedSize);
+    if (this.baseFs.readSync(this.fd, buffer, 0, entry.compressedSize, entry.localHeaderOffset + 30 + nameLength + extraLength) !== entry.compressedSize)
+      throw new Error(`Invalid ZIP file`);
+    return { data: buffer, compressionMethod: entry.compressionMethod };
+  }
+  discard() {
+    if (this.fd !== `closed`) {
+      this.baseFs.closeSync(this.fd);
+      this.fd = `closed`;
+    }
+  }
+  addDirectory(path) {
+    throw new Error(`Not implemented`);
+  }
+  deleteEntry(index) {
+    throw new Error(`Not implemented`);
+  }
+  setMtime(index, mtime) {
+    throw new Error(`Not implemented`);
+  }
+  getBufferAndClose() {
+    throw new Error(`Not implemented`);
+  }
+  setFileSource(target, compression, buffer) {
+    throw new Error(`Not implemented`);
+  }
+  setExternalAttributes(index, opsys, attributes) {
+    throw new Error(`Not implemented`);
   }
 }
 
@@ -8021,6 +8328,7 @@ function hydrateRuntimeState(data, { basePath }) {
     dependencyTreeRoots,
     enableTopLevelFallback,
     fallbackExclusionList,
+    pnpZipBackend: data.pnpZipBackend,
     fallbackPool,
     ignorePattern,
     packageLocatorsByLocations,
@@ -9677,8 +9985,10 @@ const localFs = { ...fs__default.default };
 const nodeFs = new NodeFS(localFs);
 const defaultRuntimeState = $$SETUP_STATE(hydrateRuntimeState);
 const defaultPnpapiResolution = __filename;
+const customZipImplementation = defaultRuntimeState.pnpZipBackend === `js` ? JsZipImpl : void 0;
 const defaultFsLayer = new VirtualFS({
   baseFs: new ZipOpenFS({
+    customZipImplementation,
     baseFs: nodeFs,
     maxOpenFiles: 80,
     readOnlyArchives: true
