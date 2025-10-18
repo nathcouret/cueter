@@ -21,6 +21,7 @@ concurrency:
   group: 'pages'
   cancel-in-progress: true
 
+
 jobs:
   # Single deploy job since we're just deploying
   deploy:
@@ -42,6 +43,8 @@ jobs:
         run: yarn install --check-cache --immutable --immutable-cache
       - name: Build
         run: yarn run build
+        env:
+          BASE_URL: ${{ vars.BASE_URL }}
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
