@@ -1,22 +1,13 @@
 <script setup>
-import Banner from "./components/banner/Banner.vue";
-import Converter from "./pages/converter/Converter.vue";
+import Layout from "./pages/Layout.vue";
 </script>
 
 <template>
-  <Banner></Banner>
-  <main>
-    <Converter></Converter>
-  </main>
+  <Layout/>
 </template>
 
 <style>
 @import "tailwindcss";
 
-@theme {
-  --color-blue-gray: #99b0b0;
-  --color-taupe: #b5b2b0;
-  --color-cream: #fcfaf0;
-  --color-slate: #8a9ea0;
-}
+@plugin "daisyui";
 </style>

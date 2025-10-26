@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import {TextInputProps} from "./index";
+import {TextInputProps, TextInputValueChange} from "./index";
 import {defineEmits, defineProps} from "vue";
 
 const {
-  id, title, value, readonly = false
+  id, title, value, readonly = false, placeholder = ''
 } = defineProps<TextInputProps>();
 
 const emit = defineEmits<{
@@ -12,14 +12,14 @@ const emit = defineEmits<{
 
 function onChange(e: Event) {
   const value = (e.target as HTMLInputElement).value;
-  emit('change', {value})
+  emit('change', {value} as TextInputValueChange)
 }
 </script>
 
 <template>
-  <label for="{{id}}" class="bg-blue-gray text-cream p-2">
+  <label for="{{id}}" class="input">
     {{ title }}
+    <input class="grow" id="{{id}}" type="text" :value="value" placeholder="{{placeholder}}"
+           @input="onChange" :readonly="readonly"/>
   </label>
-  <input class="bg-white border border-blue-gray" id="{{id}}" type="text" :value="value"
-         @input="onChange" :readonly="readonly"/>
 </template>
