@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import {TextAreaProps} from "./index";
-import {defineEmits, defineProps} from "vue";
 
 const {
   id, title, value, readonly = false

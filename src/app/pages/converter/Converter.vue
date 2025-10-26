@@ -4,7 +4,7 @@
       <form class="flex flex-col gap-4">
         <TextAreaInput id="cue-input" title="Input" :value="input" @change="updateInput"></TextAreaInput>
         <fieldset class="fieldset">
-          <button class="btn btn-secondary btn-outline" @click="clearInput">Clear input</button>
+          <button class="btn btn-secondary" @click="clearInput">Clear input</button>
           <ToggleButton id="artist-toggle-v2" :init-checked="includeArtistName"
                         @toggle="toggleIncludeArtistName">Include artist name
           </ToggleButton>

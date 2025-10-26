@@ -2,11 +2,12 @@
 
 import {ref} from "vue";
 import Converter from "./converter/Converter.vue";
+import ThemeDropdown from "../components/ThemeDropdown.vue";
 
 enum ACTIVE_TAB {
   CONVERTER = "converter",
   REKORDBOX = "rekordbox",
-}
+};
 
 const activeTab = ref<ACTIVE_TAB>(ACTIVE_TAB.CONVERTER);
 
@@ -19,12 +20,12 @@ function setActiveTab(newTab: ACTIVE_TAB) {
 
 <template>
   <div class="drawer">
-    <input id="my-drawer-2" type="checkbox" class="drawer-toggle"/>
+    <input id="cueter-drawer-toggle" type="checkbox" class="drawer-toggle"/>
     <div class="drawer-content flex flex-col">
       <!-- Navbar -->
       <header class="navbar bg-base-300 w-full">
         <div class="flex-none lg:hidden">
-          <label for="my-drawer-2" aria-label="open sidebar" class="btn btn-square btn-ghost">
+          <label for="cueter-drawer-toggle" aria-label="open sidebar" class="btn btn-square btn-ghost">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -43,8 +44,13 @@ function setActiveTab(newTab: ACTIVE_TAB) {
         <div class="mx-2 flex-1 px-2">Cueter</div>
         <div class="hidden flex-none lg:block">
           <ul class="menu menu-horizontal">
-            <li><a href="#converter" @click.prevent="setActiveTab(ACTIVE_TAB.CONVERTER)">Converter</a></li>
-            <li><a href="#rekordbox" @click.prevent="setActiveTab(ACTIVE_TAB.REKORDBOX)">Rekordbox</a></li>
+            <li><a class="btn btn-ghost" role="button" href="#converter"
+                   @click.prevent="setActiveTab(ACTIVE_TAB.CONVERTER)">Converter</a></li>
+            <li><a class="btn btn-ghost" role="button" href="#rekordbox"
+                   @click.prevent="setActiveTab(ACTIVE_TAB.REKORDBOX)">Rekordbox</a></li>
+            <li>
+              <ThemeDropdown/>
+            </li>
           </ul>
         </div>
       </header>
@@ -54,10 +60,17 @@ function setActiveTab(newTab: ACTIVE_TAB) {
       </main>
     </div>
     <div class="drawer-side">
-      <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label>
+      <label for="cueter-drawer-toggle" aria-label="close sidebar" class="drawer-overlay"></label>
       <ul class="menu bg-base-200 min-h-full w-80 p-4">
-        <li><a href="#converter" @click.prevent="setActiveTab(ACTIVE_TAB.CONVERTER)">Converter</a></li>
-        <li><a href="#rekordbox" @click.prevent="setActiveTab(ACTIVE_TAB.REKORDBOX)">Rekordbox</a></li>
+        <li><a class="btn btn-ghost" role="button" href="#converter"
+               @click.prevent="setActiveTab(ACTIVE_TAB.CONVERTER)">Converter</a>
+        </li>
+        <li><a class="btn btn-ghost" role="button" href="#rekordbox"
+               @click.prevent="setActiveTab(ACTIVE_TAB.REKORDBOX)">Rekordbox</a>
+        </li>
+        <li>
+          <ThemeDropdown/>
+        </li>
       </ul>
     </div>
   </div>

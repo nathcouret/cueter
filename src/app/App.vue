@@ -1,5 +1,11 @@
 <script setup>
 import Layout from "./pages/Layout.vue";
+import {onMounted} from "vue";
+import {themeChange} from "theme-change";
+
+onMounted(() => {
+  themeChange(false)
+});
 </script>
 
 <template>
@@ -9,5 +15,8 @@ import Layout from "./pages/Layout.vue";
 <style>
 @import "tailwindcss";
 
-@plugin "daisyui";
+@plugin "daisyui" {
+  themes: light --default, dark --prefersdark, cupcake, coffee;
+}
+
 </style>
