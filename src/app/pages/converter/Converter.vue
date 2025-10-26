@@ -1,19 +1,22 @@
 <template>
-  <section class="w-full relative mx-auto">
-    <div class="flex flex-wrap justify-center gap-1 pt-2 s:p-1">
-      <div class="w-full md:w-5/12">
-        <form class="flex flex-col gap-3">
-          <TextAreaInput id="cue-input" title="Input" :value="input" @change="updateInput"></TextAreaInput>
-          <input type="reset" value="Clear" class="w-1/2 p-2 bg-taupe text-cream" @click="clearInput"/>
-          <ToggleButton id="artist-toggle" :init-checked="includeArtistName"
+  <section class="flex w-full flex-col lg:flex-row justify-between">
+    <div class="grow p-4">
+      <form class="flex flex-col gap-4">
+        <TextAreaInput id="cue-input" title="Input" :value="input" @change="updateInput"></TextAreaInput>
+        <fieldset class="fieldset">
+          <button class="btn btn-secondary" @click="clearInput">Clear input</button>
+          <ToggleButton id="artist-toggle-v2" :init-checked="includeArtistName"
                         @toggle="toggleIncludeArtistName">Include artist name
           </ToggleButton>
-        </form>
-      </div>
-      <div class="w-full md:w-5/12 flex flex-col gap-3">
+        </fieldset>
+      </form>
+    </div>
+    <div class="divider lg:divider-horizontal divider-secondary">></div>
+    <div class="grow p-4 flex flex-col gap-3">
+      <div class="flex flex-col">
         <TextAreaInput id="tracklist-result" title="Result" :value="output" readonly></TextAreaInput>
-        <button @click="copy" class="bg-taupe text-cream w-1/2 p-2">Copy to clipboard</button>
       </div>
+      <button @click="copy" class="btn btn-primary">Copy to clipboard</button>
     </div>
   </section>
 </template>

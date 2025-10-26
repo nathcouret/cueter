@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import {TextAreaProps} from "./index";
-import {defineEmits, defineProps} from "vue";
 
 const {
   id, title, value, readonly = false
@@ -17,10 +16,19 @@ function onChange(e: Event) {
 </script>
 
 <template>
-  <label for="{{id}}" class="bg-blue-gray text-cream p-2">
-    {{ title }}
-  </label>
-  <textarea class="bg-white border border-blue-gray min-h-80" id="{{id}}" type="text" :value="value"
-            @input="onChange" :readonly="readonly">
+  <fieldset class="fieldset flex flex-col gap-1">
+    <legend class="fieldset-legend">
+      {{ title }}
+    </legend>
+    <textarea class="textarea textarea-xl textarea-primary" id="{{id}}" type="text" :value="value"
+              @input="onChange" :readonly="readonly" rows="20">
 </textarea>
+  </fieldset>
 </template>
+
+<style lang="scss" scoped>
+textarea {
+  width: 100%;
+  resize: vertical;
+}
+</style>
