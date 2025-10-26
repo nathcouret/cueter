@@ -3,6 +3,7 @@
 import {ref} from "vue";
 import Converter from "./converter/Converter.vue";
 import ThemeDropdown from "../components/ThemeDropdown.vue";
+import Rekordbox from "./rekordbox/Rekordbox.vue";
 
 enum ACTIVE_TAB {
   CONVERTER = "converter",
@@ -56,7 +57,7 @@ function setActiveTab(newTab: ACTIVE_TAB) {
       </header>
       <main>
         <Converter v-if="activeTab === ACTIVE_TAB.CONVERTER" id="converter"></Converter>
-        <div v-else id="rekordbox">Coming soon...</div>
+        <Rekordbox v-else-if="activeTab === ACTIVE_TAB.REKORDBOX" id="rekordbox"></Rekordbox>
       </main>
     </div>
     <div class="drawer-side">
