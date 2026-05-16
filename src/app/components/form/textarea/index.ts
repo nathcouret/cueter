@@ -4,7 +4,8 @@ export interface TextAreaProps {
     id: string,
     title: string,
     value: string
-    readonly?: boolean
+    readonly?: boolean,
+    rows?: number;
 }
 
 export interface TextAreaValueChange {
