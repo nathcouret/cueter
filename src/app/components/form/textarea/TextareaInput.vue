@@ -2,7 +2,8 @@
 import {TextAreaProps} from "./index";
 
 const {
-  id, title, value, readonly = false
+  id, title, value, readonly = false,
+  rows = 15
 } = defineProps<TextAreaProps>()
 
 const emit = defineEmits<{
@@ -20,8 +21,8 @@ function onChange(e: Event) {
     <legend class="fieldset-legend">
       {{ title }}
     </legend>
-    <textarea class="textarea textarea-xl textarea-primary" id="{{id}}" type="text" :value="value"
-              @input="onChange" :readonly="readonly" rows="20">
+    <textarea class="textarea textarea-xl textarea-primary bg-base-300" :id="id" type="text" :value="value"
+              @input="onChange" :readonly="readonly" :rows="rows">
 </textarea>
   </fieldset>
 </template>

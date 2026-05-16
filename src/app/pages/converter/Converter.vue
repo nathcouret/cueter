@@ -11,7 +11,8 @@
         </fieldset>
       </form>
     </div>
-    <div class="divider lg:divider-horizontal divider-secondary">></div>
+    <div id="divider-desktop" class="divider divider-horizontal divider-secondary xs:hidden lg:visible">></div>
+    <div id="divider-mobile" class="divider divider-secondary lg:hidden">v</div>
     <div class="grow p-4 flex flex-col gap-3">
       <div class="flex flex-col">
         <TextAreaInput id="tracklist-result" title="Result" :value="output" readonly></TextAreaInput>
@@ -57,5 +58,4 @@ function toggleIncludeArtistName({value}: ToggleButtonEvent) {
 function copy() {
   store.dispatch(COPY_TO_CLIPBOARD);
 }
-
 </script>
